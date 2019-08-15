@@ -1,0 +1,159 @@
+/* Basic style sheet*/
+
+html{
+ height:100%;
+}
+*{
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+  margin: 0px 0px;
+}
+body{
+ width: 100%;
+ /*border-top: solid 0.1em red;*/
+ height:100%; 
+ font-family: 'Merriweather Sans', sans-serif;
+
+}
+
+#main{
+ display:block;
+ width: 70%;
+ margin: 0 auto; 
+ min-height: 100%
+ padding: 0;
+ border: solid 0.1em black;
+ background-color: #f6eff7;
+}
+
+#header{
+ display:block;
+ width: 100%;
+ margin: 0 auto;
+ height: 300px;
+ background-image: url('../img/header.jpg'); 
+ background-repeat: no-repeat;
+ background-position: top right;
+ background-size: 25% 100%;
+ background-color: #2c7fb8;
+}
+#header h1{
+ color: white;
+ width: 50%;
+ text-align: right;
+ font-family: 'Abril Fatface', cursive;
+ font-size: 50px;
+ padding: 20px 15px; 
+ height: 100%;
+}
+
+
+#footer{
+ display:block;
+ width: 100%;
+ margin-top: 30px;
+ height: 80px; 
+ background-color: #404040; 
+ padding: 15px 20px;
+}
+
+#footer ul{
+ display: inline-block;
+ height: 80%;
+ list-style-type: none;
+}
+#footer ul li a{
+ display:block;
+ color: white;
+ margin: 5px 10px; 
+ font-size:12px; 
+}
+
+/* https://www.iconfinder.com/iconsets/social-media-applications*/
+#footer img{
+ display:inline-block; 
+ margin-right: 10px; 
+ width: 40px;
+ height: 40px;
+}
+
+
+#navigation{
+ display:inline-block;
+ width: 20%;
+ margin-top: 30px; 
+ padding: 6px 5px;
+ border-right: solid 0.1em #000;
+ box-shadow: 0.1em -2px grey;
+ vertical-align: top;
+}
+
+#navigation ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  
+}
+
+#navigation ul li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-bottom: solid 0.1em #000;
+  margin-top: 1px;
+}
+
+/* Change the link color on hover */
+#navigation ul li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+#contents{
+ display:inline-block;
+ width: 79.5%;
+ vertical-align: top;
+ min-height: 50px; 
+ margin-top: 50px;
+ padding: 1px 10px;
+ /*border: solid 1px black;*/
+}
+#contents h1,h2,h3,h4,h5{
+ font-family: 'Abril Fatface', cursive;
+ color: #045a8d;
+}
+
+#news_updates{
+ vertical-align: top;
+ display: inline-block;
+ width: 40%;
+ min-height: 50%;
+ border: solid 1px black;
+ position: relative;
+ margin: auto 0px; 
+}
+#news_updates img{ 
+ width: 100%;
+ height: auto
+}
+#news_updates .text{
+  color: #b30000;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center; 
+  background: #cccccc;
+  opacity: 0.5;
+}
+
+#main_col{
+display: inline-block;
+width: 59%;
+}
+
