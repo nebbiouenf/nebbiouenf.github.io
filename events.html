@@ -2,68 +2,79 @@
 <html>
 <head>
  <meta charset="utf-8"/>
- <title>Events | NEBBIO</title> 
- <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather+Sans&display=swap" rel="stylesheet"> 
- 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Events| NEBBIO</title> 
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather+Sans&display=swap" > 
  <link rel="stylesheet" href="css/style.css">
- 
+ <script src="js/script.js"></script> 
 </head>
+
 <body>
- <div id="main">
-  <div id="header">
-   <h1>Núcleo de estudos em Biociências e Biotecnologia!</h1>
+  <div class="row">
+    <a id="menu" href="javascript:void(0);" onclick="show_menubar('.')"><img src="img/menu_show.png" alt="menu" style="display:inline; height: 32px; width: 32px;"></a>
+    <div id="header">
+     <h1>Núcleo de estudos em Biociências e Biotecnologia!</h1>
+     <img alt="Logo" src="img/header.jpg">
+    </div>
   </div>
-  <div id="navigation">
-    <ul>
-		<li><a href="index.html">Pagina inicial</a></li>
-		<li><a href="membership.html">Associações</a></li>
-		<li><a href="events.html">Eventos</a></li>
-		<li><a href="about_us.html">Sobre nós</a></li>
-		<li><a href="contact.html">Contate-Nos</a></li>
-   </ul>    
+  <div class="row">
+    <div id="navigation">
+      <ul>
+  		<li><a href="index.html">Pagina inicial</a></li>
+  		<li><a href="membership.html">Associações</a></li>
+  		<li><a href="events.html">Eventos</a></li>
+  		<li><a href="about_us.html">Sobre nós</a></li>
+  		<li><a href="contact.html">Contate-Nos</a></li>
+     </ul>    
+    </div>
+  <!-- ################# CHANGE content here [start] ########### -->
+    
+     <div id="main_col_wide">
+        <h1>Page under construction</h1>
+        <p>Sorry. This page is under construction. Thank you for visiting us. </p> 
+        <p>Desculpa. Esta página está em construção. Obrigado por nos visitar.</p>   
+        <img src='img/under_construction.gif' alt="Un constr" width="100px" height="120px"/>
+        <h1>Events </h1>
+      		<ol>
+      			<li><a href="#2019">2019</a></li>
+      			<li><a href="#2018">2018</a></li>
+      			<li><a href="#2017">2017</a></li>
+      		</ol>
+      	<h3 id="2019" class="event_year">2019</h3>
+         <ol type="I">
+           <li><a href="event1/home.html">Event-2 (Date: 2/08/2019) <img src="img/new.gif" style="height:10px; width:auto;"></a></li>
+      	 <li><a href="2019_event1.html">Event-1 (Date: 22/05/2019)</a></li>
+         </ol>
+       <h3 id="2018" class="event_year">2018</h3>
+         <ol type="I">
+           <li><a href="2018_event2.html">Event-2 (Date: 2/08/2018)</a></li>
+      	 <li><a href="2018event1.html">Event-1 (Date: 22/05/2018)</a></li>
+         </ol>
+       <h3 id="2017" class="event_year">2017</h3>
+         <ol type="I">
+           <li><a href="2017_event2.html">Event-2 (Date: 2/08/2017)</a></li>
+      	 <li><a href="2017_event1.html">Event-1 (Date: 22/05/2017)</a></li>
+         </ol>
+     </div>
+     
+  <!-- ################# CHANGE content here [End] ########### -->
   </div>
-<!-- ################# CHANGE content here [start] ########### -->
-  <div id="contents">
-   <div id="main_col">
-    <h1>Events </h1>
-		<ol>
-			<li><a href="#2019">2019</a></li>
-			<li><a href="#2018">2018</a></li>
-			<li><a href="#2017">2017</a></li>
-		</ol>
-   </div>
-   <div id="news_updates">   
-   <img src='img/under_construction.gif' alt="Un constr"/>
-   </div>
-   
-   <h3 id="2019" class="event_year">2019</h3>
-   <ol type="I">
-     <li><a href="2019_event2.html">Event-2 (Date: 2/08/2019) <img src="img/new.gif" style="height:10px; width:auto;"></a></li>
-	 <li><a href="2019_event1.html">Event-1 (Date: 22/05/2019)</a></li>
-   </ol>
-   <h3 id="2018" class="event_year">2018</h3>
-   <ol type="I">
-     <li><a href="2018_event2.html">Event-2 (Date: 2/08/2018)</a></li>
-	 <li><a href="2018event1.html">Event-1 (Date: 22/05/2018)</a></li>
-   </ol>
-   <h3 id="2017" class="event_year">2017</h3>
-   <ol type="I">
-     <li><a href="2017_event2.html">Event-2 (Date: 2/08/2017)</a></li>
-	 <li><a href="2017_event1.html">Event-1 (Date: 22/05/2017)</a></li>
-   </ol>
+  <div class="row">  
+    <div id="footer">
+     <ul>
+       <li><a href="http://www.uenf.br/portal/index.php/br/" target="_blank">Universidade Estadual do Norte Fluminense Darcy Ribeiro</a></li>
+       <!-- <li><a href="#">Link 2</a></li> -->
+     </ul>     
+    <div style="float: right; " >
+     <a href="https://www.facebook.com/nebbio.uenf" target="_blank"><img src='img/Facebook.png' alt='facebook icon'/></a>
+     <a href="https://www.instagram.com/nebbiouenf/"  target="_blank" ><img src='img/Instagram.png' alt='instagram icon' /></a>
+    </div>   
+    </div>
   </div>
-<!-- ################# CHANGE content here [End] ########### -->
- <div id="footer">
-  
-   <ul>
-     <li><a href="http://www.uenf.br/portal/index.php/br/" target="_blank">Universidade Estadual do Norte Fluminense Darcy Ribeiro</a></li>
-     <!-- <li><a href="#">Link 2</a></li> -->
-   </ul>     
-  <div style="float: right; " >
-   <a href="https://www.facebook.com/nebbio.uenf" target="_blank"><img src='img/Facebook.png' alt='facebook icon'/></a>
-   <a href="https://www.instagram.com/nebbiouenf/"  target="_blank" ><img src='img/Instagram.png' alt='instagram icon' /></a>
-  </div>   
+  <div class="row">
+    <div class="footnote">
+     <p >Best viewed with IE 9+, Firefox 16+, Safari 5.1, Chrome 23+.</p>
+    </div>
   </div>
- </div>
 </body>
 </html>

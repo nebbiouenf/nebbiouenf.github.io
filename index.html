@@ -2,52 +2,61 @@
 <html>
 <head>
  <meta charset="utf-8"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Home| NEBBIO</title> 
- <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather+Sans&display=swap" rel="stylesheet"> 
- 
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather+Sans&display=swap" > 
  <link rel="stylesheet" href="css/style.css">
- 
+ <script src="js/script.js"></script> 
 </head>
+
 <body>
- <div id="main">
-  <div id="header">
-   <h1>Núcleo de estudos em Biociências e Biotecnologia!</h1>
+  <div class="row">
+    <a id="menu" href="javascript:void(0);" onclick="show_menubar('.')"><img src="img/menu_show.png" alt="menu" style="display:inline; height: 32px; width: 32px;"></a>
+    <div id="header">
+     <h1>Núcleo de estudos em Biociências e Biotecnologia!</h1>
+     <img alt="Logo" src="img/header.jpg">
+    </div>
   </div>
-  <div id="navigation">
-    <ul>
-		<li><a href="index.html">Pagina inicial</a></li>
-		<li><a href="membership.html">Associações</a></li>
-		<li><a href="events.html">Eventos</a></li>
-		<li><a href="about_us.html">Sobre nós</a></li>
-		<li><a href="contact.html">Contate-Nos</a></li>
-   </ul>    
+  <div class="row">
+    <div id="navigation">
+      <ul>
+  		<li><a href="index.html">Pagina inicial</a></li>
+  		<li><a href="membership.html">Associações</a></li>
+  		<li><a href="events.html">Eventos</a></li>
+  		<li><a href="about_us.html">Sobre nós</a></li>
+  		<li><a href="contact.html">Contate-Nos</a></li>
+     </ul>    
+    </div>
+  <!-- ################# CHANGE content here [start] ########### -->
+    
+     <div id="main_col">
+      <h1>Nossos objetivos</h1>
+      Nosso objetivo é ser uma ponte de comunicação entre alunos e o programa de pós-graduação em Biociências e Biotecnologia da UENF, 
+      buscando promover e consolidar o conhecimento científico, tecnológico e de inovação por meio de eventos na área.
+     </div>
+     <div id="news_updates">
+     <p class='text'>próximo evento</p>
+     <img src='img/next_event.png' alt="next event poster"/>
+     
+     </div>
+  <!-- ################# CHANGE content here [End] ########### -->
   </div>
-<!-- ################# CHANGE content here [start] ########### -->
-  <div id="contents">
-   <div id="main_col">
-    <h1>Nossos objetivos</h1>
-    Nosso objetivo é ser uma ponte de comunicação entre alunos e o programa de pós-graduação em Biociências e Biotecnologia da UENF, 
-    buscando promover e consolidar o conhecimento científico, tecnológico e de inovação por meio de eventos na área.
-   </div>
-   <div id="news_updates">
-   <p class='text'>próximo evento</p>
-   <img src='img/next_event.png' alt="next event poster"/>
-   
-   </div>
-   
+  <div class="row">  
+    <div id="footer">
+     <ul>
+       <li><a href="http://www.uenf.br/portal/index.php/br/" target="_blank">Universidade Estadual do Norte Fluminense Darcy Ribeiro</a></li>
+       <!-- <li><a href="#">Link 2</a></li> -->
+     </ul>     
+    <div style="float: right; " >
+     <a href="https://www.facebook.com/nebbio.uenf" target="_blank"><img src='img/Facebook.png' alt='facebook icon'/></a>
+     <a href="https://www.instagram.com/nebbiouenf/"  target="_blank" ><img src='img/Instagram.png' alt='instagram icon' /></a>
+    </div>   
+    </div>
   </div>
-<!-- ################# CHANGE content here [End] ########### -->
- <div id="footer">
-  
-   <ul>
-     <li><a href="http://www.uenf.br/portal/index.php/br/" target="_blank">Universidade Estadual do Norte Fluminense Darcy Ribeiro</a></li>
-     <!-- <li><a href="#">Link 2</a></li> -->
-   </ul>     
-  <div style="float: right; " >
-   <a href="https://www.facebook.com/nebbio.uenf" target="_blank"><img src='img/Facebook.png' alt='facebook icon'/></a>
-   <a href="https://www.instagram.com/nebbiouenf/"  target="_blank" ><img src='img/Instagram.png' alt='instagram icon' /></a>
-  </div>   
+  <div class="row">
+    <div class="footnote">
+     <p >Best viewed with IE 9+, Firefox 16+, Safari 5.1, Chrome 23+.</p>
+    </div>
   </div>
- </div>
 </body>
 </html>
