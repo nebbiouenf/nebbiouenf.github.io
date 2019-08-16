@@ -31,7 +31,7 @@ body{
  display:block;
  width: 100%;
  margin: 0 auto;
- height: 300px;
+ height: 220px;
  background-image: url('../img/header.jpg'); 
  background-repeat: no-repeat;
  background-position: top right;
@@ -40,11 +40,11 @@ body{
 }
 #header h1{
  color: white;
- width: 50%;
+ width: 51%;
  text-align: right;
  font-family: 'Abril Fatface', cursive;
  font-size: 50px;
- padding: 20px 15px; 
+ padding: 2px 15px; 
  height: 100%;
 }
 
