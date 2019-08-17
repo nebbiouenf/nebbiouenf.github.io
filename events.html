@@ -4,12 +4,12 @@
  <meta charset="utf-8"/>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Events| NEBBIO</title> 
- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Merriweather+Sans&display=swap" > 
+ <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Karla&display=swap" > 
  <link rel="stylesheet" href="css/style.css">
  <script src="js/script.js"></script> 
 </head>
 
-<body>
+<body onload="on_page_load();">
   <div class="row">
     <a id="menu" href="javascript:void(0);" onclick="show_menubar('.')"><img src="img/menu_show.png" alt="menu" style="display:inline; height: 32px; width: 32px;"></a>
     <div id="header">
@@ -19,13 +19,9 @@
   </div>
   <div class="row">
     <div id="navigation">
-      <ul>
-  		<li><a href="index.html">Pagina inicial</a></li>
-  		<li><a href="membership.html">Associações</a></li>
-  		<li><a href="events.html">Eventos</a></li>
-  		<li><a href="about_us.html">Sobre nós</a></li>
-  		<li><a href="contact.html">Contate-Nos</a></li>
-     </ul>    
+      <ul id="nav_ul">  
+		<!-- populate_nav_sidebar() javascript in js/scripts.js is used to populate pages. -->
+     </ul>   
     </div>
   <!-- ################# CHANGE content here [start] ########### -->
     
@@ -33,7 +29,7 @@
         <h1>Page under construction</h1>
         <p>Sorry. This page is under construction. Thank you for visiting us. </p> 
         <p>Desculpa. Esta página está em construção. Obrigado por nos visitar.</p>   
-        <img src='img/under_construction.gif' alt="Un constr" width="100px" height="120px"/>
+        <img src='img/under_construction.gif' alt="Un constr" width="200px" />
         <h1>Events </h1>
       		<ol>
       			<li><a href="#2019">2019</a></li>
@@ -59,22 +55,10 @@
      
   <!-- ################# CHANGE content here [End] ########### -->
   </div>
-  <div class="row">  
-    <div id="footer">
-     <ul>
-       <li><a href="http://www.uenf.br/portal/index.php/br/" target="_blank">Universidade Estadual do Norte Fluminense Darcy Ribeiro</a></li>
-       <!-- <li><a href="#">Link 2</a></li> -->
-     </ul>     
-    <div style="float: right; " >
-     <a href="https://www.facebook.com/nebbio.uenf" target="_blank"><img src='img/Facebook.png' alt='facebook icon'/></a>
-     <a href="https://www.instagram.com/nebbiouenf/"  target="_blank" ><img src='img/Instagram.png' alt='instagram icon' /></a>
-    </div>   
-    </div>
+  <div class="row" id="footer">    
   </div>
-  <div class="row">
-    <div class="footnote">
-     <p >Best viewed with IE 9+, Firefox 16+, Safari 5.1, Chrome 23+.</p>
-    </div>
+  <div class="row" id="footnote"> 
+	<!-- footNote() -->  
   </div>
 </body>
 </html>
