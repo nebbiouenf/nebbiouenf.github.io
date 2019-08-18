@@ -184,7 +184,7 @@ ol {list-style-position: inside;}
    opacity: 0.6;
    text-decoration: none;
    position: fixed;
-  }
+  }  
   #header h1{
     display: block;
     width:58%;
@@ -199,7 +199,7 @@ ol {list-style-position: inside;}
     width:auto;
     margin: 0 auto;
     height:250px;
-    float:right;
+    float: right;
 	vertical-align: bottom;
   }
   #navigation{    /* col-1 */
@@ -313,7 +313,9 @@ ol {list-style-position: inside;}
 }
 
 /* ####################### General ############################################# */
-
+#menu img{
+ float: left;
+}
 #header h1{
  color: white;
  font-family: 'Abril Fatface', cursive;

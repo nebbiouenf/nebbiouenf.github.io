@@ -1,9 +1,21 @@
 // Basic scripts
 // on page load functions
 function on_page_load(){
-	populate_nav_sidebar();
-	footer_content();
-	footNote();
+	//populate_nav_sidebar();
+	//footer_content();
+	//footNote();
+	//header_content();
+}
+
+
+//Header section
+function header_content(){
+	var header = document.getElementById("header");
+	header.innerHTML='\
+	<a id="menu" href="javascript:void(0);" onclick="show_menubar(\'.\')"><img src="img/menu_show.png" alt="menu" style="display:inline; height: 32px; width: 32px;"></a>    \
+     <h1>Núcleo de estudos em Biociências e Biotecnologia!</h1>\
+     <img alt="Logo" src="img/header.jpg"> \
+	 ';
 }
 
 // Populate Navigation bar
