@@ -7,15 +7,13 @@ function on_page_load(){
 	//header_content();
 }
 
-
+//<!-- <img alt="Logo" src="img/header_desktop.png"> --> \
 //Header section
 function header_content(){
 	var header = document.getElementById("header");
 	header.innerHTML='\
-	<a id="menu" href="javascript:void(0);" onclick="show_menubar(\'.\')"><img src="img/menu_show.png" alt="menu" style="display:inline; height: 32px; width: 32px;"></a>    \
-     <h1>Núcleo de estudos em Biociências e Biotecnologia!</h1>\
-     <img alt="Logo" src="img/header.jpg"> \
-	 ';
+	<a id="menu" href="javascript:void(0);" onclick="show_menubar(\'.\')"><img src="img/menu_show.png" alt="menu" style="display:inline; height: 32px; width: 32px;"></a>   \
+	';
 }
 
 // Populate Navigation bar
@@ -25,7 +23,7 @@ function header_content(){
 function populate_nav_sidebar(){
 	var h = new Object();
 	h['Pagina inicial'] = 'index.html';
-	h['Associações'] = 'membership.html';
+//	h['Associações'] = 'membership.html';
 	h['Eventos'] = 'events.html';
 	h['Courses'] = 'courses.html';
 	h['Sobre nós'] = 'about_us.html';
@@ -45,7 +43,7 @@ function populate_nav_sidebar(){
 function footer_content(){
 	var footer = document.getElementById("footer");
 	footer.innerHTML = '<ul> \
-       <li><a href="http://www.uenf.br/portal/index.php/br/" target="_blank">Universidade Estadual do Norte Fluminense Darcy Ribeiro</a></li> \
+       <li><a href="http://www.uenf.br/portal/index.php/br/" target="_blank"><img src="img/UENF_icon.png" style="width:40%;height:50%; " /></a></li> \
        <!-- <li><a href="#">Link 2</a></li> --> \
      </ul>     \
     <div style="float: right; " >\
