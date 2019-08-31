@@ -15,11 +15,10 @@ function header_content(type="", bg_color="rgb(230,231,232)"){
     header.style.backgroundColor = bg_color;
     bg_img='header_desktop.png';
     img_size = 'cover';
-    screen_width_avl = Screen.availWidth;
-    screen_width = window.screen.width;
+    screen_width = window.innerWidth;// viewportwidth	
     if(screen_width >=320 && screen_width <750){ 
       bg_img='header_mobile.png'; 
-      img_size= 'auto 90%';
+      img_size= 'auto 80%';	  
     }
     else if(screen_width >=768 && screen_width <1024){ 
       bg_img='header_mobile.png'; 
