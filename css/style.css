@@ -24,16 +24,14 @@ ol {list-style-position: inside;}
 }
 #header{
    display:block;
-   margin: 0 auto;
-   background-color: rgb(230,231,232);
-   background-image: radial-gradient(circle, rgba(230,231,232,0.5) 70%, rgba(189,191,193,0.7) 100%);
+   margin: 0 auto;   
    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.01);
 }
-
 #navigation{    /* col-1 */
- display:none;
- border: solid 0.1em #848688; 
+ display:none; 
  margin-bottom:2px;
+ background: white;
+ box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.01);
 }
 #main_col{  /* col-2 */
  display: block;
@@ -199,6 +197,10 @@ ol {list-style-position: inside;}
   #membership_form{
     width:100%;
   }
+  #footnote{
+	font-size: 2px;
+	padding: 0.5px 0px;
+ }
 }
 /* #################### Medium devices iPads (portrait and landscape)############ */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -286,14 +288,14 @@ ol {list-style-position: inside;}
    background-image: url('../img/header_desktop.png') ;   
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center top;  
   }
   #navigation{   /* col-1*/
    display:inline-block;
    width: 20%;
    min-height:400px;
    margin: 10px auto; 
-   padding: 6px 5px;
-   border: solid 0.01em #848688;   
+   padding: 6px 5px;   
    vertical-align:top;
    position: relative;
   }
@@ -301,7 +303,7 @@ ol {list-style-position: inside;}
     display:inline-block;
     width: 49%;
     margin: 10px auto; 
-	  min-height: 400px;
+	min-height: 400px;
     padding: 8px 12px;
     vertical-align:top;
     position: relative;
@@ -321,9 +323,7 @@ ol {list-style-position: inside;}
   #news_updates{  /* col-3 */
    display: inline-block;
    width: 29%;
-   margin: 10px auto;
-   position: relative;
-   min-height: 100%;
+   margin: 10px auto;   
    vertical-align:top;
    float:right;
   }
@@ -341,7 +341,7 @@ ol {list-style-position: inside;}
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #f1f1f1;
+  /*background-color: #f1f1f1;*/
   
 }
 #navigation ul li a {
@@ -357,36 +357,55 @@ ol {list-style-position: inside;}
   background-color: #1A838F;
   color: white;
 }
-#news_updates img{ 
- width: 100%;
- height: auto
-}
-#news_updates .text{
-  color: #b30000;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center; 
-  background: #cccccc;
-  opacity: 0.5;
-}
-
-.image-slider-wrapper{
-    overflow: hidden;
-}
 #image_slider{
     position: relative;
     height: 100%;
     padding:0;
 }
-#image_slider ul{
-list-style-type: none;
+#image_slider{
+ list-style-type: none;
 }
-#image_slider ul li a{
+#image_slider li a{
     max-width: 100%;
     float:left;
     list-style: none;
     text-decoration: none;
+	display:none;
+}
+#image_slider li a img{
+    width: 100%;
+	height: auto;
+}
+#image_slider_next, #image_slider_prev{
+ display: inline-block; 
+ opacity: 0.5;
+ padding: 10px 10px;
+ text-decoration: none;
+ color: white; 
+ border: solid 0.1em #000;
+ background: #000;
+}
+#image_slider_next{
+ float:right;
+}
+#image_slider_next:hover, #image_slider_prev:hover{
+ opacity: 0.9;
+}
+
+/* fake effect */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }

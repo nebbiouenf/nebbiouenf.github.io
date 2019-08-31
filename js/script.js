@@ -4,7 +4,7 @@ function on_page_load(){
 	//populate_nav_sidebar();
 	//footer_content();
 	//footNote();
-	//header_content();
+	//header_content();	
 }
 
 //<!-- <img alt="Logo" src="img/header_desktop.png"> --> \
@@ -29,7 +29,7 @@ function header_content(type="", bg_color="rgb(230,231,232)"){
     
     header.style.backgroundImage = 'url("../'+segments.slice(-2,-1)+'/'+bg_img+'")'; 
     header.style.backgroundSize = img_size; 
-    header.style.backgroundBlendMode= 'lighten';
+    header.style.backgroundPosition= 'center top';
     header.innerHTML='\
 	  <a id="menu" href="javascript:void(0);" onclick="show_menubar(\'..\')"><img src="../img/menu_show.png" alt="menu1" style="display:inline; height: 32px; width: 32px;"></a>   \
 	  ';
@@ -100,8 +100,6 @@ function show_menubar(path){
  }
  return(true);
 }
-
-
 //Go to top function 
 // https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
 // When the user clicks on the button, scroll to the top of the document
@@ -110,3 +108,26 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
 
+//image slide show
+var slideIndex = 0;
+function showSlides(n){
+	var image_slider_ul = document.getElementById("image_slider").children;
+	for(var i=0; i<image_slider_ul.length; i++ ){
+		image_slider_ul[i].getElementsByTagName("A")[0].style.display = "none"; 
+	}
+	if(n<0){n=0}
+	else if (n>=image_slider_ul.length){n=image_slider_ul.length-1}
+	image_slider_ul[n].getElementsByTagName("A")[0].style.display = "block"; 
+	slideIndex = n;
+}
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function image_slider(){
+	var image_slider_ul = document.getElementById("image_slider").children;		
+	if (slideIndex > image_slider_ul.length) {slideIndex = 0} 
+	showSlides(slideIndex);
+	slideIndex++;
+	setTimeout(image_slider, 10000); // Change image every 2 seconds	
+}
