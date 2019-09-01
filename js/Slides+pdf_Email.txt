@@ -1,0 +1,134 @@
+
+function onOpen(){
+  var spreadsheet = SpreadsheetApp.getActive();
+  var menuItems = [
+    {name: 'Confirm Payment', functionName: 'confirmPayment'},
+    {name: 'Generate Certificates', functionName: 'makeCertificates'}
+  ];
+  spreadsheet.addMenu('OMICAS 2019', menuItems);
+}
+
+function confirmPayment(){
+  var event_name = 'OMICAS';
+  var ss = SpreadsheetApp.getActiveSpreadsheet();  
+  var sheet = ss.getSheetByName("inscriçao");
+  var member_sheet = ss.getSheetByName("Pagamento Confirmado");
+  var cell = sheet.getActiveCell();    
+  var row_num = cell.getRowIndex();
+  if(row_num < 1 || cell.isBlank()){
+    Browser.msgBox('Click on email-id of a member from --inscriçao-- Sheet. ');    
+    return(0);
+  }
+  var email_id = sheet.getRange("B"+row_num).getValue();
+  var name = sheet.getRange("C"+row_num).getValue();
+  var degree = sheet.getRange("D"+row_num).getValue();
+  var organization = sheet.getRange("E"+row_num).getValue();
+  var cpf = sheet.getRange("F"+row_num).getValue();  
+  var date_now = new Date();
+  //var valid_year=date_now.getFullYear();
+  //Browser.msgBox(date_now.getMonth() ); //0-index based 
+  //if(date_now.getMonth()>=3){valid_year = valid_year+1; }
+  var ui = SpreadsheetApp.getUi();
+  var amount = ui.prompt('Member '+name+' payment received?','Amount received (R$.)', ui.ButtonSet.YES_NO);
+  var payment_date = Utilities.formatDate(date_now, "GMT+1", "dd/MM/yyyy")+'  '+date_now.toLocaleTimeString();
+  //ui.prompt('"'+name+'" payment received on which date?','Enter date of payment (DD-MM-YYYY)', ui.ButtonSet.OK_CANCEL);
+  if (amount.getSelectedButton() == ui.Button.YES) {    
+    var confirm = ui.prompt('Member '+name+' paid R$.'+amount.getResponseText()+' received on '+payment_date+'.\nConfrim?','Any remark/comment' ,ui.ButtonSet.YES_NO);
+    if(confirm.getSelectedButton() == ui.Button.YES){
+      last_row_num = member_sheet.getLastRow();
+      member_id=1
+      if(last_row_num >2){ member_id = member_sheet.getRange("A"+last_row_num).getValue()+1; }
+      member_sheet.getRange("A"+(last_row_num+1)).setValue(member_id);  
+      member_sheet.getRange("B"+(last_row_num+1)).setValue(name); 
+      member_sheet.getRange("C"+(last_row_num+1)).setValue(email_id); 
+      member_sheet.getRange("D"+(last_row_num+1)).setValue(degree);
+      member_sheet.getRange("E"+(last_row_num+1)).setValue(cpf); 
+      member_sheet.getRange("F"+(last_row_num+1)).setValue(organization); 
+      member_sheet.getRange("G"+(last_row_num+1)).setValue(payment_date); 
+      member_sheet.getRange("H"+(last_row_num+1)).setValue(amount.getResponseText()); 
+      member_sheet.getRange("I"+(last_row_num+1)).setValue(confirm.getResponseText()); 
+      
+      //Send email to confirm
+      var subject = event_name+': Payment confirmed!!'
+      var message = '<div style="border: botted 0.2em black; padding: 10px 20px; background-color:#deebf7; "> \
+           <h1 style="color:white; background-color:#636363; padding: 3px 4px;">Núcleo de estudos em Biociências e Biotecnologia!</h1>\
+                    <h2>'+event_name+' Payment confirmed!!<h2><br/><br/> \Dear '+name+',<br/><br/>We recived your payment R$.'+amount.getResponseText()+
+                      '.00.<br/>Your membership ID is: <b>'+event_name+'/'+date_now.getFullYear()+'/'+member_id+'<b/>. \
+      <br/>~~~~~ <br/><br/><br/>Sincerely, <br/>Team NEBBIO,\nUENF. </div>';
+      //MailApp.sendEmail(email_id, subject, message, payment_date, );      
+      send_receipt(email_id,subject,message,event_name+'/'+date_now.getFullYear()+'/'+member_id,payment_date, name,organization,amount.getResponseText(),confirm.getResponseText());
+      Browser.msgBox('Member "'+name+'" added to confirmed list SUCCESSFULLY!!\n\n'+'member_id: '+member_id);
+    }else{
+      Browser.msgBox('Member '+name+' NOT added to confirmed list (Cancelled)!!');
+    }
+  }else{
+   Browser.msgBox('Member '+name+' NOT added to confirmed list (data not provided)!!');
+  }  
+}
+
+// Send PDF email
+function send_receipt(email,subject, html,member_id,date,name,organization,amount,mode) { 
+  //https://docs.google.com/presentation/d/1fD668T7AFnDPToWlaSgRQNqsSznNWftQI2WW7bSX3UU/edit#slide=id.g4195a4c8bb_0_119
+  var P = SlidesApp.openById('1fD668T7AFnDPToWlaSgRQNqsSznNWftQI2WW7bSX3UU');
+  var slide = P.getSlides()[0];
+  slide.getTables()[0].getCell(0,0).getText().setText("Date:"+date);
+  slide.getTables()[0].getCell(0,1).getText().setText("Member :"+member_id);  
+  slide.getTables()[1].getCell(0,1).getText().setText(name);
+  slide.getTables()[1].getCell(1,1).getText().setText(organization);
+  slide.getTables()[1].getCell(2,1).getText().setText(amount);
+  slide.getTables()[1].getCell(3,1).getText().setText(mode);
+  //https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=Kanhu
+  var response = UrlFetchApp.fetch('https://api.qrserver.com/v1/create-qr-code/?size=80x80&data='+member_id);
+  var qr_code = response.getAs('image/png');
+  var position = {left: 10, top: 20};
+  var size = {width: 80, height: 80};
+  //var img = slide.insertImage(qr_code, position.left, position.top, size.width, size.height);
+  slide.getImages()[1].replace(qr_code);
+  P.saveAndClose();
+  
+  var blob = DriveApp.getFileById(P.getId()).getBlob();   
+  var pdf = blob.getAs("application/pdf");  
+  MailApp.sendEmail(email, subject, "PDF attachment", 
+     {htmlBody: html, attachments: pdf});    
+}
+
+// makeCertificates
+// https://docs.google.com/presentation/d/1XoSdXzwCf2f-tf1v64gzqsrIECUxshOBoZDflTxQWvQ/edit#slide=id.p
+function makeCertificates(){
+  var event_name = 'OMICAS';
+  var ss = SpreadsheetApp.getActiveSpreadsheet();  
+  //var sheet = ss.getSheetByName("inscriçao");
+  var member_sheet = ss.getSheetByName("Pagamento Confirmado");
+  var cell = member_sheet.getActiveCell();    
+  var row_num = cell.getRowIndex();
+  Browser.msgBox('Under Construction');
+  
+  if(row_num < 1 || cell.isBlank()){
+    Browser.msgBox('Click on email-id of a member from --Pagamento Confirmado-- Sheet. ');    
+    return(0);
+  }
+  var date_now = new Date();
+  var member_id = date_now.getFullYear()+'/'+event_name+'/'+member_sheet.getRange("A"+row_num).getValue();
+  var name = member_sheet.getRange("B"+row_num).getValue();
+  var email_id = member_sheet.getRange("C"+row_num).getValue();  
+  var P = SlidesApp.openById('1XoSdXzwCf2f-tf1v64gzqsrIECUxshOBoZDflTxQWvQ');
+  var slide = P.getSlides()[0];
+  slide.getShapes()[2].getText().clear();
+  slide.getShapes()[2].getText().insertText(0,name);
+  slide.getShapes()[8].getText().setText(member_id);
+  P.saveAndClose();
+  
+  var subject = event_name+': Participation Certificate. '
+  var message = '<div style="border: botted 0.2em black; padding: 10px 20px; background-color:#deebf7; "> \
+           <h1 style="color:white; background-color:#636363; padding: 3px 4px;">Núcleo de estudos em Biociências e Biotecnologia!</h1>\
+                    <h2>Get your '+event_name+' Cerificate <h2><br/><br/> \Dear '+name+',<br/><br/> \
+      <br/>~~~~~ <br/><br/><br/>Sincerely, <br/>Team NEBBIO,\nUENF. </div>';
+  
+  var blob = DriveApp.getFileById(P.getId()).getBlob();   
+  var pdf = blob.getAs("application/pdf");  
+  MailApp.sendEmail(email_id, subject, "PDF attachment", 
+     {htmlBody: message, attachments: pdf});   
+  Browser.msgBox('Sent Email to '+name+'.  ');
+  
+
+}
