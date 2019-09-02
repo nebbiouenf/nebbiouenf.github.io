@@ -31,7 +31,7 @@ function header_content(type="", bg_color="rgb(230,231,232)"){
     header.style.backgroundSize = img_size; 
     header.style.backgroundPosition= 'center top';
     header.innerHTML='\
-	  <a id="menu" href="javascript:void(0);" onclick="show_menubar(\'..\')"><img src="../img/menu_show.png" alt="menu1" style="display:inline; height: 32px; width: 32px;"></a>   \
+	  <a id="menu" href="javascript:void(0);" onclick="show_menubar(\'..\')"><img src="../img/menu_show.png" alt="menu" style="display:inline; height: 32px; width: 32px;"></a>   \
 	  ';
   }
   else{
