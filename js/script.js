@@ -29,7 +29,7 @@ function header_content(type="", bg_color="rgb(230,231,232)"){
     
     header.style.backgroundImage = 'url("../'+segments.slice(-2,-1)+'/'+bg_img+'")'; 
     header.style.backgroundSize = img_size; 
-    header.style.backgroundPosition= 'center top';
+    header.style.backgroundPosition= 'center bottom';
     header.innerHTML='\
 	  <a id="menu" href="javascript:void(0);" onclick="show_menubar(\'..\')"><img src="../img/menu_show.png" alt="menu" style="display:inline; height: 32px; width: 32px;"></a>   \
 	  ';

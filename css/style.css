@@ -11,6 +11,7 @@ body{
  height:100%; 
  font-family: 'Noto Sans SC', sans-serif;
  background: radial-gradient( circle farthest-corner at 18.7% 37.8%,  rgba(250,250,250,1) 0%, rgba(225,234,238,1) 90% );
+ line-height: 1.5em;
 }
 ol {list-style-position: inside;}
 .row{
@@ -127,7 +128,7 @@ ol {list-style-position: inside;}
   height:100%;
 }
 #got_to_top{
- display: none; /* Hidden by default */
+  display: none; /* Hidden by default */
   position: fixed; /* Fixed/sticky position */
   bottom: 20px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
@@ -176,12 +177,15 @@ ol {list-style-position: inside;}
   .row{
     width: 100%;
   }
+  h1{font-size: 150%;margin: 12px auto;}
+  h2{font-size: 125%;margin: 8px auto;}
+  h3{font-size: 105%;margin: 8px auto;}
   #header{
    width: 100%;
-   height: 300px;
+   height: 250px;
    background-image: url('../img/header_mobile.png') ;   
    background-repeat: no-repeat;
-   background-size: auto 250px;
+   background-size: auto 200px;
    background-position: center bottom; 
   }
   #menu{
@@ -255,8 +259,8 @@ ol {list-style-position: inside;}
     width:100%;
   }
   #footnote{
-	font-size: 2px;
-	padding: 0.1px 0px;
+	font-size: 1px;
+	padding: 0;
  }
 }
 /* #################### Medium devices iPads (portrait and landscape)############ */
@@ -264,9 +268,12 @@ ol {list-style-position: inside;}
   .row{
     width: 100%;
   }
+  h1{font-size: 150%;margin: 12px auto;}
+  h2{font-size: 125%;margin: 8px auto;}
+  h3{font-size: 105%;margin: 8px auto;}
   #header{
    width: 100%;
-   height: 250px;
+   height: 300px;
    background-image: url('../img/header_mobile.png') ;   
    background-repeat: no-repeat;
    background-size:auto 250px;
@@ -350,6 +357,9 @@ ol {list-style-position: inside;}
   .row{
     width: 80%;
   }  
+  h1, h2{
+    margin: 20px 2px;
+  }
   #header{
    min-height:215px;
    background-image: url('../img/header_desktop.png') ;   
@@ -384,7 +394,7 @@ ol {list-style-position: inside;}
     display: inline-block;
     width: 79.5%;
     margin: 10px auto;
-    padding: 10px 12px;
+    padding: 20px 20px;
     vertical-align:top;
 	min-height: 400px;
     position: relative;
@@ -401,6 +411,8 @@ ol {list-style-position: inside;}
   }
   #got_to_top{
     display: block; 
+    width: 5%;
+    text-align: center;
   }
 }
 
@@ -408,8 +420,6 @@ ol {list-style-position: inside;}
 #menu img{
  float: left;
 }
-
-
 .image_slider_container{
  width: 100%;	 
  position: relative;
