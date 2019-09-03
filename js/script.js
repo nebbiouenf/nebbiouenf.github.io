@@ -65,6 +65,36 @@ function populate_nav_sidebar(){
 	}	
 }
 
+
+// add members to about us page
+// Rebeka Souza, Leticia Nascimento, Cida Bertonceli,
+// Yrexam Ribeiro, Ulli Barros, Gabriela Petroceli, Sanderson Calixto,Francisnei Pedrosa Silva,Vinicius Mussi, Enrico Cossi Arantes
+function populate_member_list(){
+	var h = new Object();
+	// name             Description 
+	h['Cida Bertonceli'] = 'Doutorado, UENF';
+	h['Rebeka Souza'] = 'Doutorado, UENF';
+	h['Leticia Nascimento'] = 'Doutorado, UENF';
+	h['Ulli Barros, '] = 'Mastrado, UENF';
+	h['Francisnei Pedrosa Silva'] = 'Doutorado, UENF';
+	h['Enrico Cossi Arantes'] = 'Doutorado, UENF';
+	h['Yrexam Ribeiro'] = 'Doutorado, UENF';
+	h['Gabriela Petroceli'] = 'Doutorado, UENF';
+	h['Vinicius Mussi'] = 'Doutorado, UENF';
+	h['Kanhu Charan Moharana'] = 'Doutorado, UENF';
+	//h['Leticia Nascimento'] = 'Doutorado, UENF';
+  for(var member_name in h){
+    document.getElementById('member_list').innerHTML = document.getElementById('member_list').innerHTML + 
+    '<p class="member_details" >'+
+          "<a href='#' > "+member_name+'</a>'+
+          "<span> "+h[member_name]+"</span> \
+        </p>";  
+  }
+}
+
+
+
+
 //footer content
 function footer_content(relative_path='.'){
 	var footer = document.getElementById("footer");
