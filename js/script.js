@@ -155,9 +155,10 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
 }
 function image_slider(){
-	var image_slider_ul = document.getElementById("image_slider").children;		
-	if (slideIndex > image_slider_ul.length) {slideIndex = 0} 
+	var image_slider_ul = document.getElementById("image_slider").children;	
+	
+	if (slideIndex>= image_slider_ul.length) {slideIndex = 0} 
 	showSlides(slideIndex);
-	slideIndex++;
-	setTimeout(image_slider, 10000); // Change image every 2 seconds	
+	slideIndex++;	
+	setTimeout(image_slider, 5000); // Change image every 2 seconds	
 }
