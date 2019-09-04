@@ -72,22 +72,26 @@ function populate_nav_sidebar(){
 function populate_member_list(){
 	var h = new Object();
 	// name             Description 
-	h['Cida Bertonceli'] = 'Doutorado, UENF';
-	h['Rebeka Souza'] = 'Doutorado, UENF';
-	h['Leticia Nascimento'] = 'Doutorado, UENF';
-	h['Ulli Barros, '] = 'Mastrado, UENF';
-	h['Francisnei Pedrosa Silva'] = 'Doutorado, UENF';
-	h['Enrico Cossi Arantes'] = 'Doutorado, UENF';
-	h['Yrexam Ribeiro'] = 'Doutorado, UENF';
-	h['Gabriela Petroceli'] = 'Doutorado, UENF';
-	h['Vinicius Mussi'] = 'Doutorado, UENF';
-	h['Kanhu Charan Moharana'] = 'Doutorado, UENF';
-	//h['Leticia Nascimento'] = 'Doutorado, UENF';
+	h['Maria Aparecida Aride Bertonceli'] = {"course":"Doutorando","lab":"LQFPP", "univ":"UENF", "lattes":"http://lattes.cnpq.br/9217151774218625"};
+	h['Rebeka Souza'] = {"course":"Doutorando","lab":" ", "univ":"UENF", "lattes":"#"};
+	h['Leticia Nascimento'] = {"course":"Doutorando","lab":"LBR", "univ":"UENF", "lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8150997A2"};
+	h['Ulli Barros'] = {"course":"Mestrando","lab":"LQFPP", "univ":"UENF", "lattes":"#"};
+	h['Francisnei Pedrosa da Silva'] = {"course":"Doutorando","lab":"LQFPP", "univ":"UENF", "lattes":"http://lattes.cnpq.br/8154976376584399"};
+	h['Enrico Cossi Arantes'] = {"course":"Mestrando","lab":"LBCT", "univ":"UENF", "lattes":"http://lattes.cnpq.br/9984795509104651"};
+	h['Yrexam Ribeiro'] = {"course":"Doutorando","lab":"LBCT", "univ":"UENF", "lattes":"http://lattes.cnpq.br/1626204785454495"};
+	h['Gabriela Petroceli Mota'] = {"course":"Doutorando","lab":"LFBM", "univ":"UENF", "lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8736711P5"};
+	h['Vinicius Mussi'] = {"course":" ","lab":" ", "univ":"UENF", "lattes":"#"};
+	h['Kanhu Charan Moharana'] = {"course":"Doutorando","lab":"LQFPP", "univ":"UENF", "lattes":"http://lattes.cnpq.br/2585560606421215"};
+	h['Fernanda'] = {"course":"Mestrando","lab":"LBCT", "univ":"UENF", "lattes":"#"};
+	h['Sanderson Dias Calixto'] = {"course":"Mestrando","lab":"LBR", "univ":"UENF", "lattes":"http://lattes.cnpq.br/4705348856252126"};
+	h['Alan Tardin da Silva'] = {"course":"Doutorando","lab":"LBT", "univ":"UENF", "lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4332211P4"};
+	//h['Leticia Nascimento'] = {"course":"Doutorando","lab":"LQFPP", "univ":"UENF", "lattes":"#"};
   for(var member_name in h){
     document.getElementById('member_list').innerHTML = document.getElementById('member_list').innerHTML + 
     '<p class="member_details" >'+
-          "<a href='#' > "+member_name+'</a>'+
-          "<span> "+h[member_name]+"</span> \
+          "<a href='"+h[member_name].lattes+"' target='_blank'> "+member_name+'</a>'+
+		  "<span style='font-style:italic;'>  "+h[member_name].course+"</span>" +
+          "<span> "+h[member_name].lab+", "+h[member_name].univ+".</span> \
         </p>";  
   }
 }
