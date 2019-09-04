@@ -102,8 +102,9 @@ ol {list-style-position: inside;}
   display:none;
 }
 #membership_form{
-  width:640px;
-  height:1081px;
+  display: block;
+  width: 90%;
+  margin: 0 auto;
 }
 #footnote{
   font-size: 9px;
@@ -155,7 +156,7 @@ ol {list-style-position: inside;}
 .member_details{
  display:inline-block;
  top:0;
- width: 30%;
+ width: 50%;
  margin: 20px auto;
 }
 .member_details a{
