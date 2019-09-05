@@ -83,7 +83,7 @@ function populate_member_list(){
 	h["Rebeka Souza"] = {"course":"Doutorando","lab":"LBR","univ":"UENF","lattes":"http://lattes.cnpq.br/7019355651582809"};
 	h["Kanhu Charan Moharana"] = {"course":"Doutorando","lab":"LQFPP","univ":"UENF","lattes":"http://lattes.cnpq.br/2585560606421215"};
 	h["Enrico Cossi Arantes"] = {"course":"Mestrando","lab":"LBCT","univ":"UENF","lattes":"http://lattes.cnpq.br/9984795509104651"};
-	h["Fernanda"] = {"course":"Mestrando","lab":"Lbct","univ":"UENF","lattes":""};
+	h["Fernanda Soares dos Santos Chaves"] = {"course":"Mestrando","lab":"Lbct","univ":"UENF","lattes":"http://lattes.cnpq.br/9271217223620635"};
 	h["Nayara Vigneron de Oliveira"] = {"course":"Mestrando","lab":"LBR","univ":"UENF","lattes":""};
 	//h['Leticia Nascimento'] = {"course":"Doutorando","lab":"LQFPP", "univ":"UENF", "lattes":"#"};
   for(var member_name in h){
