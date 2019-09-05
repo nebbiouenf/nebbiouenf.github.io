@@ -53,7 +53,7 @@ function populate_nav_sidebar(){
 	h['Eventos'] = 'events.html';
 	h['Cursos'] = 'courses.html';
 	h['Sobre nós'] = 'about_us.html';
-	h['Contate-Nos'] = 'contact.html';	
+	h['Contate-nos'] = 'contact.html';	
 	var nav = document.getElementById("nav_ul");
 	for(var page_name in h){
 		var li = document.createElement("li");
@@ -83,7 +83,7 @@ function populate_member_list(){
 	h['Vinicius Mussi'] = {"course":" ","lab":" ", "univ":"UENF", "lattes":"#"};
 	h['Kanhu Charan Moharana'] = {"course":"Doutorando","lab":"LQFPP", "univ":"UENF", "lattes":"http://lattes.cnpq.br/2585560606421215"};
 	h['Fernanda'] = {"course":"Mestrando","lab":"LBCT", "univ":"UENF", "lattes":"#"};
-	h['Sanderson Dias Calixto'] = {"course":"Mestrando","lab":"LBR", "univ":"UENF", "lattes":"http://lattes.cnpq.br/4705348856252126"};
+	h['Sanderson Dias Calixto'] = {"course":"Doutorando","lab":"LBR", "univ":"UENF", "lattes":"http://lattes.cnpq.br/4705348856252126"};
 	h['Alan Tardin da Silva'] = {"course":"Doutorando","lab":"LBT", "univ":"UENF", "lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4332211P4"};
 	//h['Leticia Nascimento'] = {"course":"Doutorando","lab":"LQFPP", "univ":"UENF", "lattes":"#"};
   for(var member_name in h){
