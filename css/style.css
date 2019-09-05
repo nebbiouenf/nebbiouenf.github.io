@@ -11,7 +11,7 @@ body{
  height:100%; 
  font-family: 'Noto Sans SC', sans-serif;
  background: radial-gradient( circle farthest-corner at 18.7% 37.8%,  rgba(250,250,250,1) 0%, rgba(225,234,238,1) 90% );
- line-height: 1.5em;
+ 
 }
 ol {list-style-position: inside;}
 .row{
@@ -59,10 +59,12 @@ ol {list-style-position: inside;}
  display: block;
  margin-bottom:1px;
  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.01);
+ line-height: 1.5em;
 }
 #main_col_wide{  /* col-2 wider version for desktop */
   display: block;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.01);
+  line-height: 1.5em;
   }
 #news_updates{  /* col-3 */
  display: block;
@@ -148,16 +150,19 @@ ol {list-style-position: inside;}
 }
 .fig_legend{
   display:block;
-  width:80%;
+  width:100%;
+  margin:0 auto;
   color: #9e9e9e;
-  font-size:90%;
+  font-size:80%;
   top:0;
+  padding: 2px 2px; 
+  line-height:1em;
+  margin-bottom: 10px; 
 }
 .member_details{
- display:inline-block;
- top:0;
- width: 50%;
- margin: 20px auto;
+ display:inline-block; 
+ width: 50%; 
+ margin-top: 1px; 
 }
 .member_details a{
   text-decoration: none;
@@ -263,6 +268,11 @@ ol {list-style-position: inside;}
 	font-size: 1px;
 	padding: 0;
  }
+ .member_details{
+	display:block; 
+	width: 100%; 
+	margin-top: 1px;
+  }
 }
 /* #################### Medium devices iPads (portrait and landscape)############ */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
@@ -350,7 +360,7 @@ ol {list-style-position: inside;}
   }
   #membership_form{
     width:100%;
-  }
+  }  
 }
 
 /* ####################### Desktop Styles############################################# */
