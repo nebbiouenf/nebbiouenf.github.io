@@ -132,3 +132,67 @@ function makeCertificates(){
   
 
 }
+
+//===========================================
+
+// Crachá generation
+//https://drive.google.com/open?id=19tuHESp0qwNwbLM9h3u8jOWm9YoJJqpr
+function makeBadges(){
+  //Browser.msgBox('Under construction !!!  ');
+  // Destination powerpoint file ID
+  var P = SlidesApp.openById(Crachá_googleSlide_ID);   
+  var badge_size = {width:286, height:371};
+  var badge_positions = {loc: [{left:10, top:10},{left:badge_size.width+20, top:10},{left:10, top:badge_size.height+20},{left:badge_size.width+20, top:badge_size.height+20}]};  
+  
+  var ss = SpreadsheetApp.getActiveSpreadsheet();  
+  //var sheet = ss.getSheetByName("inscriçao");
+  var sheet = ss.getActiveSheet();
+  if(sheet.getSheetName() != "Pagamento Confirmado"){
+    Browser.msgBox('Erro: Select an email IDs from "inscriçao" Sheet');
+    return(0);
+  }
+  var last_row_num = sheet.getLastRow();    
+  var slide = P.appendSlide(SlidesApp.PredefinedLayout.BLANK);  
+  var image = DriveApp.getFileById(bg_image_id).getAs('image/png');   
+  
+  var no_of_user = last_row_num-2;
+  var i =0; // the position on a slide (1,2,3,4) or 0,1,2,3;
+  for(var c=1; c<=no_of_user; ){
+    var user = {name:sheet.getRange("B"+(c+2)).getValue(), id:sheet.getRange("J"+(c+2)).getValue(), univ:sheet.getRange("F"+(c+2)).getValue()};
+    if(user.univ.length > 15){
+     user.univ = user.univ.substring(0, 11)+ '...'; // truncate if longer than 15 letters
+    }
+    var i_badge = slide.insertImage(image);
+    i_badge.setHeight(badge_size.height);
+    i_badge.setWidth(badge_size.width );
+    i_badge.setLeft(badge_positions.loc[i].left);
+    i_badge.setTop(badge_positions.loc[i].top);
+    var user_text = slide.insertTextBox(user.name+'\n '+'['+user.univ+']', i_badge.getLeft()+20, i_badge.getTop()+240, 252, 85);
+    user_text.getText().getTextStyle().setFontSize(18).setFontFamily('Cambria').setBold(true);  
+    user_text.getText().getParagraphStyle().setParagraphAlignment(SlidesApp.ParagraphAlignment.CENTER);  
+    var l = user_text.getText().getEndIndex()-user.univ.length-4;
+    user_text.getText().getRange(l, user_text.getText().getEndIndex()).getTextStyle().setFontSize(16);    
+    
+    //var response = UrlFetchApp.fetch('https://api.qrserver.com/v1/create-qr-code/?size=80x80&data='+user.id);
+    var bar_code_url = 'http://barcodes4.me/barcode/c39/'+user.id+'.png?resolution=2&margin=2&IsTextDrawn=1&TextSize=15&height=100';
+    var response = UrlFetchApp.fetch(bar_code_url);
+    var qr_code = response.getAs('image/png');
+    var position = {left: i_badge.getLeft()+(0.5*i_badge.getWidth())-(192/2), top: i_badge.getTop()+178};
+    var qr = slide.insertImage(qr_code, position.left, position.top, 196,50);
+    /*var user_id_text = slide.insertTextBox(user.id, i_badge.getLeft()+(0.5*i_badge.getWidth())-48, position.top+52, 100, 10);
+    user_id_text.getText().getTextStyle().setFontSize(10).setFontFamily('Cambria'); 
+    user_id_text.getText().getParagraphStyle().setParagraphAlignment(SlidesApp.ParagraphAlignment.CENTER);
+    user_id_text.setContentAlignment(SlidesApp.ContentAlignment.MIDDLE);
+    */
+    i++; 
+    c++;
+    if(i==4 && c<=no_of_user){
+      slide = P.appendSlide(SlidesApp.PredefinedLayout.BLANK);
+      i=0;
+    }
+  }
+  //var blob = DriveApp.getFileById(P.getId()).getBlob();   
+  //var pdf = blob.getAs("application/pdf");  
+  //MailApp.sendEmail(email, '', "PDF attachment", 
+  //   {htmlBody: html, attachments: pdf}); 
+}
