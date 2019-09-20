@@ -141,7 +141,7 @@ ol {list-style-position: inside;}
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
+  background-color: #b2182b; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
@@ -150,6 +150,58 @@ ol {list-style-position: inside;}
 }
 #got_to_top:hover{
  background-color: #555; /* Add a dark-grey background on hover */
+}
+.countdown{
+ display: block; /* Hidden by default */
+ width: 150px;
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  left: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */  
+  background: white;
+  border: solid 0.02em #000;
+}
+.countdown .counter_name{
+ display: block; 
+ font-size: 120%;
+ font-weight: bolder;
+ padding: 1px 10px 5px 10px;
+ vertical-align:middle; 
+ text-align: center;
+ background: ivory; 
+ width: 100%;
+ border: solid 0.01em #000;
+}
+.countdown .counter_time,
+.countdown .counter_unit{
+ display: inline-block;  
+ font-size: 200%;
+ text-align: center;
+ color: #fde0dd;
+ background: #b2182b; 
+}
+.countdown .counter_time{
+ color: #b2182b;
+ background: white;
+ width:40%;
+ font-family: Impact, Charcoal, sans-serif;
+ font-size: 220%;
+ top:0px;
+ border-left: solid 0.02em #000;
+}
+.countdown .counter_unit{
+ width:60%;
+}
+.countdown .counter_hr_min_sec{
+ display: block; 
+ font-family: "Lucida Console", Monaco, monospace;
+ font-size: 90%;
+ text-align: center;
+ padding: 10px 10px;
+ border-top: solid 0.01em #000;
+}
+.countdown .counter_hr_min_sec p{
+ display: inline-block;  
 }
 .fig_legend{
   display:block;
@@ -275,6 +327,9 @@ ol {list-style-position: inside;}
 	display:block; 
 	width: 100%; 
 	margin-top: 1px;
+  }
+  .countdown{
+   display: none; /* Hidden by default */   
   }
 }
 /* #################### Medium devices iPads (portrait and landscape)############ */

@@ -15,6 +15,7 @@
 	<script>header_content('event','rgba(230, 255, 255, 0.005)');</script>
   </div> 
   <div id='got_to_top' onclick="topFunction()">&#94;<br/>Topo</div> 
+  <div class='countdown'><span class='counter_name'>Countdown</span><span class='counter_time' id='counter_time'>0</span><span class='counter_unit'>Days</span><span class='counter_hr_min_sec'> <p id='hour'>10</p>:<p id='minute'>10</p>:<p id='second'>10</p> </span></div>
   <div class="row">
     <div id="navigation">
       <ul id="nav_ul">
@@ -73,6 +74,9 @@
      </div>
   <!-- ################# CHANGE content here [End] ########### -->
   </div>
+  <script>
+   var x = setInterval(function(){ countdown();}, 1000);
+  </script>
   <div class="row" id="footer"> 
 	<!-- footer_content() -->  
 	 <script>footer_content('..');</script>
