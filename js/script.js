@@ -72,26 +72,33 @@ function populate_nav_sidebar(){
 function populate_member_list(){
 	var h = new Object();
 	// name             Description 
-	h["Maria Aparecida Aride Bertonceli"] = {"course":"Doutorando","lab":"LQFPP","univ":"UENF","lattes":"http://lattes.cnpq.br/9217151774218625"};
-	h["Gabriela Petroceli Mota"] = {"course":"Doutorando","lab":"LFBM","univ":"UENF","lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8736711P5"};
-	h["Yrexam Rodrigues de Souza Ribeiro "] = {"course":"Doutorando","lab":"LBCT","univ":"UENF","lattes":"http://lattes.cnpq.br/1626204785454495"};
-	h["Francisnei Pedrosa da Silva"] = {"course":"Doutorando","lab":"LQFPP","univ":"UENF","lattes":"http://lattes.cnpq.br/8154976376584399"};
-	h["Leticia Silva Nascimento"] = {"course":"Doutorando","lab":"LBR ","univ":"UENF","lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8150997A2"};
-	h["Sanderson Dias Calixto"] = {"course":"Doutorando","lab":"LBR","univ":"UENF","lattes":"http://lattes.cnpq.br/4705348856252126"};
-	h["Alan Tardin da Silva"] = {"course":"Doutorando","lab":"LBT","univ":"UENF","lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4332211P4"};
-	h["Ulli Barros Oliveira"] = {"course":"Doutorando","lab":"LQFPP","univ":"UENF","lattes":"http://lattes.cnpq.br/7076969411682965"};
-	h["Rebeka Souza"] = {"course":"Doutorando","lab":"LBR","univ":"UENF","lattes":"http://lattes.cnpq.br/7019355651582809"};
-	h["Kanhu Charan Moharana"] = {"course":"Doutorando","lab":"LQFPP","univ":"UENF","lattes":"http://lattes.cnpq.br/2585560606421215"};
-	h["Enrico Cossi Arantes"] = {"course":"Mestrando","lab":"LBCT","univ":"UENF","lattes":"http://lattes.cnpq.br/9984795509104651"};
-	h["Fernanda Soares dos Santos Chaves"] = {"course":"Mestrando","lab":"Lbct","univ":"UENF","lattes":"http://lattes.cnpq.br/9271217223620635"};
-	h["Nayara Vigneron de Oliveira"] = {"course":"Mestrando","lab":"LBR","univ":"UENF","lattes":""};
+	h["Maria Aparecida Aride Bertonceli"] = {"course":"Doutorando","lab":"LQFPP","univ":"UENF","lattes":"http://lattes.cnpq.br/9217151774218625", 'dp':'cida.jpg'};
+	h["Gabriela Petroceli Mota"] = {"course":"Doutorando","lab":"LFBM","univ":"UENF","lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8736711P5", 'dp':'gabri.jpg'};
+	h["Yrexam Rodrigues de Souza Ribeiro "] = {"course":"Doutorando","lab":"LBCT","univ":"UENF","lattes":"http://lattes.cnpq.br/1626204785454495", 'dp':'yrexam.jpg'};
+	h["Francisnei Pedrosa da Silva"] = {"course":"Doutorando","lab":"LQFPP","univ":"UENF","lattes":"http://lattes.cnpq.br/8154976376584399", 'dp':'fransis.jpg'};
+	h["Leticia Silva Nascimento"] = {"course":"Doutorando","lab":"LBR ","univ":"UENF","lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K8150997A2", 'dp':'leticia.jpg'};
+	h["Sanderson Dias Calixto"] = {"course":"Doutorando","lab":"LBR","univ":"UENF","lattes":"http://lattes.cnpq.br/4705348856252126", 'dp':'sanderson.jpg'};
+	h["Alan Tardin da Silva"] = {"course":"Doutorando","lab":"LBT","univ":"UENF","lattes":"http://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K4332211P4", 'dp':'alan.jpg'};
+	h["Ulli Barros Oliveira"] = {"course":"Doutorando","lab":"LQFPP","univ":"UENF","lattes":"http://lattes.cnpq.br/7076969411682965", 'dp':'ulli.jpg'};
+	h["Rebeka Souza"] = {"course":"Doutorando","lab":"LBR","univ":"UENF","lattes":"http://lattes.cnpq.br/7019355651582809", 'dp':'rebeka.jpg'};
+	h["Luiza Gonçalves Ayres"] = {"course":"Mestrando","lab":"LBR","univ":"UENF","lattes":"http://lattes.cnpq.br/2853673446493637", 'dp':'luiza.jpg'};
+	h["Kanhu Charan Moharana"] = {"course":"Doutorando","lab":"LQFPP","univ":"UENF","lattes":"http://lattes.cnpq.br/2585560606421215", 'dp':'kcm.jpg'};
+	h["Enrico Cossi Arantes"] = {"course":"Mestrando","lab":"LBCT","univ":"UENF","lattes":"http://lattes.cnpq.br/9984795509104651", 'dp':'enrico.jpg'};
+	h["Fernanda Soares dos Santos Chaves"] = {"course":"Mestrando","lab":"Lbct","univ":"UENF","lattes":"http://lattes.cnpq.br/9271217223620635", 'dp':'nanda.jpg'};
+	h["Vinicius Mussi"] = {"course":"","lab":".","univ":"UENF","lattes":"", 'dp':'vinicius.jpg'};
+	h["Nayara Vigneron de Oliveira"] = {"course":"Mestrando","lab":"LBR","univ":"UENF","lattes":"", 'dp':'profile_F.jpg'}; 
+	// Luu Riberiro, Milena, Douglas
+	//https://forms.gle/znuia75AofnQtU329
 	//h['Leticia Nascimento'] = {"course":"Doutorando","lab":"LQFPP", "univ":"UENF", "lattes":"#"};
   for(var member_name in h){
     document.getElementById('member_list').innerHTML = document.getElementById('member_list').innerHTML + 
     '<p class="member_details" >'+
-          "<a href='"+h[member_name].lattes+"' target='_blank'> "+member_name+'</a>'+
-		  "<span style='font-style:italic;'>  "+h[member_name].course+"</span>" +
-          "<span> "+h[member_name].lab+", "+h[member_name].univ+".</span> \
+		  "<img src='img/members/"+h[member_name].dp+"' src='"+h[member_name].dp+"' />"+
+		  "<span>"+
+			"<a href='"+h[member_name].lattes+"' target='_blank'> "+member_name+'</a>'+
+			"<span style='font-style:italic;'>  "+h[member_name].course+"</span>" +
+			"<span> "+h[member_name].lab+", "+h[member_name].univ+".</span> \
+		  </span>\
         </p>";  
   }
 }
