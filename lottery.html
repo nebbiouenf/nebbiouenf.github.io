@@ -1,0 +1,173 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>NEBBIO| lottery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <script src="js/script.js"></script> -->
+  <style>
+  div#bowl{
+    width:50%; 
+    margin: 0 auto;
+    border: solid 0.1em grey;
+    perspective: 500px;
+    -webkit-perspective: 500px;
+    background: url('img/bowl.jpeg') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  span.chit{
+    display:inline-block;
+    border: solid 0.1em grey;
+    box-shadow: 1px 1px 10px grey;
+    background:ivory;
+    text-align:center;
+    padding: 10px 10px;
+    position: absolute;
+    transition: .3s; 
+    /*
+    z-index: 2;
+    margin-left:-300px;
+    margin-top:300px; */
+  }
+  span.button{
+    display: block;
+    background:red;
+    width: 80px;
+    border: groove 0.1em grey;
+  }
+  span.button:hover{
+    background:orange;
+  }
+  span.button a{
+    display: block;
+    width:90%;
+    margin: 0 auto;
+    text-decoration: none;
+    color: white;
+    padding: 1px 1px;
+    text-align: center;
+  }
+  </style>
+ <script>
+    var screen_ht = window.screen.height;
+    var screen_wd = window.screen.width;
+   var participants = [{'name':'Kanhu', 'winer':0}, {'name':'KCM', 'winer':0}, {'name':'MMkooa', 'winer':0}, {'name':'Sanju', 'winer':0}, {'name':'Sanju1', 'winer':0}, {'name':'Sanju11', 'winer':0}, {'name':'Sanju22', 'winer':0} ];
+   
+   function add_chits(){
+     var bowl_div = document.getElementById("bowl");
+     bowl_div.style.minHeight = screen_ht+'px';
+     for(var i=0; i<participants.length; i++){
+      var chit = document.createElement("span");
+      chit.id = 'chit_'+i;
+      chit.className = 'chit';
+      chit.innerHTML = participants[i].name;
+      chit.style.width = screen_wd*0.05+'px';
+      chit.style.height = screen_ht*0.05+'px';
+      chit.style.zIndex = parseInt(Math.floor(Math.random() * 5) + 2);
+      chit.style.marginLeft = (Math.floor(Math.random() * -(screen_wd/5)) + screen_wd/3 )+'px';
+      chit.style.marginTop = (Math.floor(Math.random() * 10) + screen_ht-(screen_ht/4))+'px'; 
+      var angle = (Math.floor(Math.random() * -60) + 60)+'deg';
+      chit.style.transform= 'perspective(5em) rotateY('+angle+') translateZ(1em)';
+      var angle = [90,-90,120,270];
+      chit.style.transform = 'rotateX('+angle[Math.floor(Math.random()*angle.length)]+'deg)';
+      bowl_div.appendChild(chit); 
+      list_of_tickets.push(chit);
+     }
+   }
+   
+   function shuffle_chits(){
+    var i =0;
+    var times =1;
+    var chit =list_of_tickets[i];
+    var top = 50;
+    var left= screen_wd/5;
+    chit.style.marginLeft = left+'px';
+    chit.style.marginTop = top+'px';
+    var angle =(Math.random() * 360) + 0;
+    var anim = setInterval(throw_a_chit, 5 );
+    function throw_a_chit(){
+      times++;
+      top -=20;
+      left +=20;
+      chit.style.marginLeft = left+'px';
+      chit.style.marginTop = top+'px';
+      var pers = (Math.floor(Math.random() * 50) + 2)+'px';
+      chit.style.WebkitPerspective = pers;
+      chit.style.perspective = pers;
+      if(times >= 30){
+        i++;
+        times = 0;
+        top =50;
+        left =screen_wd/5;
+        chit.style.transform = 'rotate('+(Math.floor(Math.random() * -350) +360 )+'deg)';
+        chit.style.zIndex = parseInt(Math.floor(Math.random() * 5) + 2);
+        chit.style.marginLeft = (Math.floor(Math.random() * -(screen_wd/5)) + screen_wd/3 )+'px';
+        chit.style.marginTop = (Math.floor(Math.random() * 10) + screen_ht-(screen_ht/4) )+'px'; 
+        chit = list_of_tickets[i];
+        if(i == list_of_tickets.length)
+         clearInterval(anim);
+      }
+      else{
+        angle+=0.5;
+      }
+    }
+   }
+   
+   function pick_chits(list_of_tickets){
+     if (list_of_tickets.length ==0){
+       alert('Empty bowl!!!');
+       return(0);
+     }
+     var lucky_guy = Math.floor(Math.random()*list_of_tickets.length);
+     var chit =list_of_tickets[lucky_guy];
+     var removed = list_of_tickets.splice(lucky_guy,1);
+     sel_tickets.push(removed);
+     
+     
+     chit.style.background='red';
+     chit.style.WebkitPerspective = '0px';
+     chit.style.transform = 'rotate(0deg)';
+     chit.style.zIndex   = list_of_tickets.length;
+     var times=0;
+     var left_mar = 250;
+     var top_mar = 200;
+     chit.style.marginLeft =left_mar+'px';
+     chit.style.marginTop = top_mar+'px';
+     var anim = setInterval(throw_a_chit, 10 );
+     
+     function throw_a_chit(){
+      times++;
+      top_mar-=1;
+      chit.style.marginLeft =left_mar+'px';
+      chit.style.marginTop = top_mar+'px';
+      if(times>=250){
+        clearInterval(anim);
+        chit.style.left =(screen_wd*0.05)*sel_tickets.length+'px';
+        chit.style.top = '50px';
+      }
+     }
+    }
+   
+  </script> 
+</head>
+<body onload="add_chits();">
+  <script>
+   var list_of_tickets = [];
+   var sel_tickets=[];
+  </script>
+  <div id="bowl">
+    <span class="chit">
+      test
+    </span>
+  </div>
+    <span class='button'>
+    <a href="javascript:void(0);" onclick="shuffle_chits();">Shuffle</a>
+  </span>
+  <span class='button'>
+    <a href="javascript:void(0);" onclick="pick_chits(list_of_tickets);">Pick one</a>
+  </span>
+  
+  
+ </body>
+</html>
