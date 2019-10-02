@@ -6,9 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- <script src="js/script.js"></script> -->
   <style>
+  body{
+	margin: 0 0;
+	padding: 0 0;
+	background: #000000;	
+  }
+  .glowingtext {
+	color: #FFFFFF;
+	background: #232323;
+	text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18;
+	color: #FFFFFF;
+	background: #232323;
+  }
   div#bowl{
-    width:50%; 
-    margin: 0 auto;
+    margin: 20% auto;
     border: solid 0.1em grey;
     perspective: 500px;
     -webkit-perspective: 500px;
@@ -25,6 +36,7 @@
     padding: 10px 10px;
     position: absolute;
     transition: .3s; 
+	font-size: 80%;
     /*
     z-index: 2;
     margin-left:-300px;
@@ -56,17 +68,18 @@
    
    function add_chits(){
      var bowl_div = document.getElementById("bowl");
-     bowl_div.style.minHeight = screen_ht+'px';
+     bowl_div.style.minHeight = screen_ht*0.4+'px';
+	 bowl_div.style.width = screen_ht*0.4+'px';
      for(var i=0; i<participants.length; i++){
       var chit = document.createElement("span");
       chit.id = 'chit_'+i;
       chit.className = 'chit';
       chit.innerHTML = participants[i].name;
-      chit.style.width = screen_wd*0.05+'px';
+      chit.style.width = screen_ht*0.05+'px';
       chit.style.height = screen_ht*0.05+'px';
       chit.style.zIndex = parseInt(Math.floor(Math.random() * 5) + 2);
-      chit.style.marginLeft = (Math.floor(Math.random() * -(screen_wd/5)) + screen_wd/3 )+'px';
-      chit.style.marginTop = (Math.floor(Math.random() * 10) + screen_ht-(screen_ht/4))+'px'; 
+      chit.style.marginLeft = (Math.floor(Math.random() * -(screen_ht/7)) + screen_ht*0.2 )+'px';
+      chit.style.marginTop = (Math.floor(Math.random() * 20) + screen_ht*0.28)+'px'; 
       var angle = (Math.floor(Math.random() * -60) + 60)+'deg';
       chit.style.transform= 'perspective(5em) rotateY('+angle+') translateZ(1em)';
       var angle = [90,-90,120,270];
@@ -102,8 +115,8 @@
         left =screen_wd/5;
         chit.style.transform = 'rotate('+(Math.floor(Math.random() * -350) +360 )+'deg)';
         chit.style.zIndex = parseInt(Math.floor(Math.random() * 5) + 2);
-        chit.style.marginLeft = (Math.floor(Math.random() * -(screen_wd/5)) + screen_wd/3 )+'px';
-        chit.style.marginTop = (Math.floor(Math.random() * 10) + screen_ht-(screen_ht/4) )+'px'; 
+        chit.style.marginLeft = (Math.floor(Math.random() * -(screen_ht/7)) + screen_ht*0.2 )+'px';
+        chit.style.marginTop = (Math.floor(Math.random() * 10) + screen_ht*.28 )+'px'; 
         chit = list_of_tickets[i];
         if(i == list_of_tickets.length)
          clearInterval(anim);
@@ -156,6 +169,7 @@
    var list_of_tickets = [];
    var sel_tickets=[];
   </script>
+  <span class="glowingtext"> Lottery </span>
   <div id="bowl">
     <span class="chit">
       test
