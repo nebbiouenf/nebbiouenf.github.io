@@ -7,6 +7,34 @@
  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" > 
  <link rel="stylesheet" href="../css/style.css">
  <script src="../js/script.js"></script> 
+
+ <style>
+ label{
+ display: block;
+ }
+ label span{
+ display: inline-block;
+ width: 150px;
+ }
+ input.input-field{
+  display: inline-block;
+  width: 30%;
+  padding: 5px 5px;
+  border: solid 0.1em grey;
+  margin: 5px 5px;
+
+ }
+ </style>
+ <script>
+  function showDownloadBox(){
+	var member_id = document.getElementById('member_id');
+	var email = document.getElementById('email');
+	if (window.confirm('If you click "ok" you would be redirected . Cancel will load this website ')) 
+	{
+		window.location.assign("https://www.w3schools.com");
+	}
+  }
+ </script>
 </head>
 
 <body>
@@ -15,7 +43,7 @@
 	<script>header_content('event','rgba(230, 255, 255, 0.005)');</script>
   </div> 
   <div id='got_to_top' onclick="topFunction()">&#94;<br/>Topo</div> 
-  <div class='countdown'><span class='counter_name'>Countdown</span><span class='counter_time' id='counter_time'>0</span><span class='counter_unit'>Days</span><span class='counter_hr_min_sec'> <p id='hour'>10</p>h :<p id='minute'>10</p>m:<p id='second'>10</p>s </span></div>
+  <!-- <div class='countdown'><span class='counter_name'>Countdown</span><span class='counter_time' id='counter_time'>0</span><span class='counter_unit'>Days</span><span class='counter_hr_min_sec'> <p id='hour'>10</p>h :<p id='minute'>10</p>m:<p id='second'>10</p>s </span></div> -->
   <div class="row">
     <div id="navigation">
       <ul id="nav_ul">
@@ -24,6 +52,7 @@
   		  <!-- <li><a href="#Programação">Programação</a></li>
   		  <li><a href="#palestrantes">Palestrantes</a></li> -->
   		  <li><a href="#feedback">Feedback</a></li>
+		  <li><a href="#certificate">Download Certificate</a></li>
   		  <li ><a href="https://nebbiouenf.github.io/" target="_blank" style="color: #9e9e9e;">NEBBIO - UENF</a></li>
      </ul>    
     </div>
@@ -71,12 +100,20 @@
 	      Palestrantes -->
 	    <h1 id="feedback">Feedback</h1>
         <a href="https://forms.gle/1AV13BkFuVRaRBiE7" targe="_blank"> clique aqui </a>
+		<h1 id="certificate">Download Certificate</h1>
+			<div style="border: solid 0.1em grey; ">
+				<form action="#" >
+					<label><span> Inscriçao No:</span><input type="text" id="member_id" class='input-field'></label>
+					<label><span> E-mail ID: </span><input type="text" id="email" class='input-field'></label>
+					<input type="button" value="Get link" onclick="showDownloadBox();">
+				</form>
+			</div>
      </div>
   <!-- ################# CHANGE content here [End] ########### -->
   </div>
-  <script>
+  <!--<script>
    var x = setInterval(function(){ countdown();}, 1000);
-  </script>
+  </script> -->
   <div class="row" id="footer"> 
 	<!-- footer_content() -->  
 	 <script>footer_content('..');</script>
