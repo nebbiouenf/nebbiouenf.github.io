@@ -156,7 +156,7 @@
   
   if(parseInt(key_value['code']) == parseInt(id_mapping[key_value['id']].ascii)){ 
    window.history.forward();
-   window.location("https://drive.google.com/file/d/"+id_mapping[key_value['id']].id+'/view');  
+   window.location.replace("https://drive.google.com/file/d/"+id_mapping[key_value['id']].id+'/view');  
  }
  else{
    alert('ID de e-mail incompatível... ');
