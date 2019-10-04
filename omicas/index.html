@@ -26,12 +26,19 @@
  }
  </style>
  <script>
+  
   function showDownloadBox(){
-	var member_id = document.getElementById('member_id');
-	var email = document.getElementById('email');
-	if (window.confirm('If you click "ok" you would be redirected . Cancel will load this website ')) 
+	var member_id = document.getElementById('member_id').value;
+	var email = document.getElementById('email').value;
+	member_id = member_id.replace(' ',''); 
+	email = email.replace(' ',''); 
+	var ascii = 0;
+	for(var i=0; i< email.length; i++){
+     ascii += email.charCodeAt(i);
+    }	
+	if (window.confirm('A página será redirecionada!!')) 
 	{
-		window.location.assign("https://www.w3schools.com");
+		window.location.assign("fetch_certificates.html?id="+member_id+"&"+"code="+ascii);
 	}
   }
  </script>
@@ -101,9 +108,9 @@
 	    <h1 id="feedback">Feedback</h1>
         <a href="https://forms.gle/1AV13BkFuVRaRBiE7" targe="_blank"> clique aqui </a>
 		<h1 id="certificate">Download Certificate</h1>
-			<div style="border: solid 0.1em grey; ">
+			<div style="padding: 10px 10px; ">
 				<form action="#" >
-					<label><span> Inscriçao No:</span><input type="text" id="member_id" class='input-field'></label>
+					<label><span> Inscriçao No:</span> 2019-001-<input type="text" id="member_id" class='input-field' style="width: 50px;"></label>
 					<label><span> E-mail ID: </span><input type="text" id="email" class='input-field'></label>
 					<input type="button" value="Get link" onclick="showDownloadBox();">
 				</form>

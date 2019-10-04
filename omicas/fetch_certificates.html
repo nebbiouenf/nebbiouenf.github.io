@@ -1,0 +1,171 @@
+<html>
+<head>
+<script>
+ var id ='xxx';
+ 
+ var id_mapping = JSON.parse('{\
+"133": {"ascii": 2120, "id" :"1B6PV6Gp2k-wgt84Ri71kLCXoEc5D27FP" },\
+"11": {"ascii": 2113, "id" :"1fJWe7xs3Zxk0iugrPA4ZkimqWHj85qam" },\
+"121": {"ascii": 2598, "id" :"12DYV5Pr-yKq54ai6fVIj3ldx62KQQJj8" },\
+"106": {"ascii": 2886, "id" :"1rGwK1KgLVq9IBw5ac_wAyqCLSiQaY_KO" },\
+"108": {"ascii": 2671, "id" :"13BGnjTjnYQAC6NQ92GBMCTHVIdccbOI4" },\
+"14": {"ascii": 2759, "id" :"1qveGkuz_k6F4nVojfQorTMErHFQhgOrY" },\
+"105": {"ascii": 2741, "id" :"1ghSPFkGG4I_cWQUaRTyfohNVq7EG_HDb" },\
+"8": {"ascii": 1618, "id" :"1nqUsWDiKCrblteNBvRCZxqSSwYvx5gFt" },\
+"103": {"ascii": 2982, "id" :"1yzlbXLKoRB649jR8A3HUV2EppfwgGaX-" },\
+"33": {"ascii": 1991, "id" :"1rO_rt8GT5hB_zwjDoZbZ9nFnX4nNgIDp" },\
+"6": {"ascii": 1742, "id" :"122SB0LAUNkzV6Voaxtr7LllkS6ismxep" },\
+"29": {"ascii": 2230, "id" :"1eU0t4l9K1-eTWXDoMre-K9qDzy5lm3k1" },\
+"27": {"ascii": 2960, "id" :"1HWS0B9WSDnqsPQtqVlalxixSCra9Nvzj" },\
+"131": {"ascii": 2038, "id" :"1kJAmItpayj0DUJ6sOUlpC5MAdRxQsg5p" },\
+"28": {"ascii": 2718, "id" :"17x3Giz-57JmbLfv18BDuZFpmx9BNUNcG" },\
+"107": {"ascii": 1841, "id" :"1qCdPr6LVKV8YDfvOljxBgV7lrcTQW9jF" },\
+"1": {"ascii": 2022, "id" :"14bU27P3r3-keymUcYdTxpt4VsQuJccyp" },\
+"2": {"ascii": 3190, "id" :"16OXD_GHDHP9aFHqXlQWZxIP_re6UI24v" },\
+"3": {"ascii": 2604, "id" :"1WfspScIEOhUouno06KhlUkxTbiYBjwS2" },\
+"4": {"ascii": 2557, "id" :"1LnMm9kBCMh_DPW1Gn27SXr8UOBwsVw9u" },\
+"5": {"ascii": 2448, "id" :"12ATMtW3-hyikOlEIz3YaK3nvt2m8I2UE" },\
+"7": {"ascii": 3206, "id" :"16jtCyzDVWIEqhZeiUFqa99sYG4DqH01Y" },\
+"9": {"ascii": 2049, "id" :"1MkzJUG_N3OOwRZfdxOwDNeZvzkOmrzMp" },\
+"10": {"ascii": 2104, "id" :"1nuPxrue7iQD-pQzjkVNRTMcwMhSySGuj" },\
+"12": {"ascii": 2647, "id" :"1Izlc1SVAX-BKwfIqcquJ7yKwo0VOiL48" },\
+"13": {"ascii": 3095, "id" :"1CRGDvAHHT7vLemQlwXFZMoZ7D1NT7XnI" },\
+"15": {"ascii": 2391, "id" :"1E8kZGdr9TKEuLUGOGyeXVwHcXai5vakY" },\
+"16": {"ascii": 2971, "id" :"1Y9kCCY1m9wD-e_MtakFd0HfCU47tHWBs" },\
+"17": {"ascii": 2633, "id" :"1S13HCagG6n9qiG0n3NJba3M14MQ63SG8" },\
+"18": {"ascii": 1881, "id" :"1Ghl9To0bomKKyWGhqXwbIDILyvcw3Xry" },\
+"19": {"ascii": 2744, "id" :"1_ieLRxV6rKXaXpVJPGDlICGVhUZ3nOmM" },\
+"20": {"ascii": 3365, "id" :"1VbQyv1e3saxeoJlOxSRrC9Vps_ZmtUZr" },\
+"21": {"ascii": 2578, "id" :"15XfmOG49OJMJh3MsffLvvqCfFZnkCCHE" },\
+"22": {"ascii": 1682, "id" :"1s6v3BspQ5Mzig4LZqg7TKsi8kVk5p6lu" },\
+"23": {"ascii": 2583, "id" :"10nVeJv2aG9qj3MTkPD4VE5zl8X7oHk_C" },\
+"24": {"ascii": 2174, "id" :"1fIIN4ST87etKeN8UGM3odJlqk3vm7ZPr" },\
+"25": {"ascii": 2904, "id" :"17BuhqMEbohtkL-T_WHbsnpfQDzP7DXYT" },\
+"26": {"ascii": 2593, "id" :"1JvtW40rhsrNVjJJ_G64SU-FkrijajgI9" },\
+"30": {"ascii": 2865, "id" :"1oAnQMlyFJ2tWvTEM6ZDVl8JLr8i3uISv" },\
+"31": {"ascii": 2917, "id" :"1Emy18-_BM1_0K8WGyTZjrmNwy_RJ6x0o" },\
+"32": {"ascii": 2828, "id" :"1_wrZY1N6YuoKXJVFtU0WrFSA6AQW5HrH" },\
+"34": {"ascii": 3499, "id" :"1hGcPYcJYAF5OKvoOZ2u_Tn6eLooqFtgN" },\
+"35": {"ascii": 2584, "id" :"1Dw5Ug-Mz_QSneDSR5yXktBYkOy0-eQKJ" },\
+"36": {"ascii": 2330, "id" :"18vc-EvHSAGs7dIwFfdwaNCYZIPwe5Mh9" },\
+"37": {"ascii": 2529, "id" :"1BXSAz_2FCXQIZ8xMg2x49EEZfWz_xMr9" },\
+"38": {"ascii": 2334, "id" :"1RnegmKIE9tZgFAoiiC2_qVW9mp093R60" },\
+"39": {"ascii": 2738, "id" :"1KsA8LRMpu3CuOIkyJ2_BHB0mqvMczFRZ" },\
+"40": {"ascii": 2655, "id" :"1M5JNf6336isjXhOlZEHz0D-SLPsLTip9" },\
+"41": {"ascii": 2619, "id" :"1-LTQkcepJ5tZxedmjgsTfgyBoN4ccGYK" },\
+"42": {"ascii": 2314, "id" :"1r5c2q3daGutqrG_gVDvGoZp64aVb791Y" },\
+"43": {"ascii": 2692, "id" :"1d5Ga2KS6_FsnXPJc7vz8PUHPsGHtc9GP" },\
+"44": {"ascii": 3068, "id" :"18zDMuKkdt3a70pwhxk12pcGccE_kbxPH" },\
+"45": {"ascii": 2728, "id" :"17zskmzrHCKdh0pzVyTOG0WnQWMea_2DO" },\
+"46": {"ascii": 1706, "id" :"1MkOxQvPnC1NbNVUHVy6U9Ky6RRT2Tx7N" },\
+"47": {"ascii": 2644, "id" :"1si7d-AxQWFqTMwaohI1EK2WnRPbyovMR" },\
+"48": {"ascii": 2484, "id" :"1zDE59ec--VJFTr2LS9nj21wEUv754Ylh" },\
+"49": {"ascii": 2815, "id" :"11wOaECvn5J1z_iuNJvPCk4mae2w1cqYE" },\
+"50": {"ascii": 2701, "id" :"1AQb9SfsY3RI6eRf0HPWygo-8fLGhMY4B" },\
+"51": {"ascii": 2339, "id" :"1MPcwkZZLrutPTr87nKIMbvk9-8usIUAg" },\
+"52": {"ascii": 1953, "id" :"1TGlRAYOao2dvId2LASd7-u6zJySzyJTL" },\
+"53": {"ascii": 2026, "id" :"1YZbl1t9BSeOYWRuY8TALnqwJfDBw7A4d" },\
+"54": {"ascii": 2485, "id" :"1dMqvbYPnMicKmG6H_Tx-e5LGmRdRLSSV" },\
+"55": {"ascii": 1503, "id" :"1Kqa4HhMsNQKerQnhStZeDLiZ6D5Xxbj8" },\
+"56": {"ascii": 2256, "id" :"1GgCw_SNTtdwikG0G5edVdnua3IKVGhv5" },\
+"57": {"ascii": 2336, "id" :"1Xc4Pg3MHK83O3-2zl3XRIFMl8rj_qN9j" },\
+"58": {"ascii": 2486, "id" :"1vGpKxQStFNEApGPBGVQ7_9lZ6iTyIsIn" },\
+"59": {"ascii": 2406, "id" :"1Psm0PNxhhNN_H8Ch2nvZuo9gl35x_fFx" },\
+"60": {"ascii": 2061, "id" :"1Mh0l7rIU5_Wbh39CEIpIn5_ZBaJhSrCg" },\
+"61": {"ascii": 2214, "id" :"1FVwsEV5WSpHakWqzlZpLfmpGJrv1R0u_" },\
+"62": {"ascii": 2387, "id" :"1F9w_K-KKZw8WPO3nild41Enuex27g1I_" },\
+"63": {"ascii": 1575, "id" :"1S-7_AdxP7XpA38w8HJJLnU8PZG6GVxBk" },\
+"64": {"ascii": 2265, "id" :"16kHElUKOWbgRYcfPAgwTZNH_k9WYhV1o" },\
+"65": {"ascii": 3193, "id" :"1uo_Pq4CHNk7OfqKd7BXj5GtC6EGpnLPN" },\
+"66": {"ascii": 3098, "id" :"1yQ3JbfHPSzhQQNCuMeiYpKxslGDO-1uL" },\
+"67": {"ascii": 2124, "id" :"1KKh-MWDWThg_gk9oohCmUVe4LHIsRlK4" },\
+"68": {"ascii": 2549, "id" :"1I4jH7Uz3b40BwADqEUGHanrAfylHw1Xv" },\
+"69": {"ascii": 2750, "id" :"1e57c1cUT9xV7oWns-AAmjiNhdXqcdU37" },\
+"70": {"ascii": 2755, "id" :"1tybQkX64vp4io7HIhasNmv13tg0JjAGp" },\
+"71": {"ascii": 3438, "id" :"1pg38wg_QfKle6UU6kKdMwqh4QmrT-SGZ" },\
+"72": {"ascii": 2246, "id" :"1eUfWZzogDZ_uv5_hRza1oOX38M0EUvoz" },\
+"73": {"ascii": 2450, "id" :"1TOIx0b2P_r06bkI3Fvig2PGojUviwEEV" },\
+"74": {"ascii": 2405, "id" :"1_cOlBOVIy_nSe3OZkaDOVvS_X55y7R8r" },\
+"75": {"ascii": 1810, "id" :"15Do-r99P1gohZOpeRyxp2-pMMk7lNNW7" },\
+"76": {"ascii": 2885, "id" :"1vCR9X7U5E1F6lkVEOIjYjAts2NDOt9kx" },\
+"77": {"ascii": 2414, "id" :"1z_0cOAxX9HfWLlzym3ci7c1V9rycw41m" },\
+"78": {"ascii": 2691, "id" :"1Vlj_3-T860gVJsV83D0BxywHm-uKfNL7" },\
+"79": {"ascii": 2356, "id" :"16_oEd9eYyDmCEQuIXYhZz7gIIPGOk8y1" },\
+"80": {"ascii": 3078, "id" :"1zcWpfbQfDVrqOpnmHK-GVJU8SIjJJxxP" },\
+"81": {"ascii": 2562, "id" :"1KpRvBZXRcrq-ksxSyL2aRmXC8u2e5h1y" },\
+"82": {"ascii": 2664, "id" :"18A_4UnXEL-JfOArE64h9ACmUvfbI8-Iv" },\
+"83": {"ascii": 1539, "id" :"1hvg59_xInrSSO1y0Vqkimgosr0NbYj06" },\
+"84": {"ascii": 2054, "id" :"1e92BAE0yO3moN4rRaCvpzZHSWciX00tK" },\
+"85": {"ascii": 2653, "id" :"1zUwTCuUhgLMsqHUgJjsu8nC-WC-sSLh1" },\
+"86": {"ascii": 2701, "id" :"1lz2_kMcfcEiR5BgVscWTlr0eYHpjNBgv" },\
+"87": {"ascii": 2215, "id" :"102vX54LpJlA0jBmSkFDs3rfun98ZPqdb" },\
+"88": {"ascii": 2843, "id" :"15ddRwANmam_IoR8QfIbzgTtQK_bRXd07" },\
+"89": {"ascii": 1929, "id" :"1Vdi1-KunV6WqTmxVuDnXD4bSxXd72Yrf" },\
+"90": {"ascii": 2659, "id" :"1aJT72YFlIuZSwNUB3mZAIjCbV4Y66NjL" },\
+"91": {"ascii": 2578, "id" :"12zHpcfkdmr4rYE_j9HCFYbxb6glgC8S5" },\
+"92": {"ascii": 1925, "id" :"1FJ4Fds7GHEvNJiOGnU9guolp05vfo7Bc" },\
+"93": {"ascii": 3115, "id" :"1O1fz33tJlOfjMWgAyMIqKvi7d1LZmJCg" },\
+"94": {"ascii": 3460, "id" :"1brAhBp4bsb3oI0cxTK07FDhT9zTDNxr9" },\
+"95": {"ascii": 2415, "id" :"1LcxF5g8uxNE_EWv9F8-b_q0PcNoWq-p6" },\
+"96": {"ascii": 2591, "id" :"1yR0f_hNZyoWu41rV-c6qDGprB4QTiXH9" },\
+"97": {"ascii": 2509, "id" :"1KoP-KZP-9Hw07O6pbJf7wVvhoxMkp6-7" },\
+"98": {"ascii": 1676, "id" :"1KxDWps5Qz1G2-1HDOUR6A0t2Y-lI8jup" },\
+"99": {"ascii": 2639, "id" :"1i--YxsMyfH9E1bPfbqYHdeD5AUoRrHT7" },\
+"100": {"ascii": 1776, "id" :"1KTQ7dWhDbb6etrxijugnEMQEhG5JqoGm" },\
+"101": {"ascii": 2352, "id" :"1wAcFHx2yma1k-whmBkVeum86_yImd7Pq" },\
+"102": {"ascii": 2319, "id" :"13oYyw-fX6tDIgAYUXd_k6-oXi4Y1VW_p" },\
+"104": {"ascii": 2688, "id" :"1piSHjcxbBEHbHTG7ky2uqfFnwTS1r-tZ" },\
+"109": {"ascii": 1308, "id" :"1YOwTp-UpO_TtvOUclS5DRhbHNma82vSF" },\
+"110": {"ascii": 2424, "id" :"1tUcueeyb089jYFRl48SclFSMqO9RLSy5" },\
+"111": {"ascii": 2270, "id" :"10XulQH10mdQw_k6QDoYlsKhXo7v9dy60" },\
+"112": {"ascii": 1890, "id" :"1Ua6Ng4kfBrt0Z12OBvZyL8ZJ8e8Skt10" },\
+"113": {"ascii": 2416, "id" :"1o4qkHZ07TIlxgwTV1kQic6VIdM5QMlz7" },\
+"114": {"ascii": 1871, "id" :"1P6IbcbOm99lUNOe5QIiIrgqPmw6r80cp" },\
+"115": {"ascii": 2316, "id" :"11yDput9Kn-dlycElrKpaOQxA6PL37rZ2" },\
+"116": {"ascii": 2170, "id" :"1HfzOp6qndv6zlY54leQKj1v4eFIKoX4Q" },\
+"117": {"ascii": 2320, "id" :"1639EVZUQD4Xab75GGM52886ah9_rfAsC" },\
+"118": {"ascii": 2780, "id" :"1CZhfHniGCZoaDcqNsOQv5qIO02NEpwU7" },\
+"119": {"ascii": 2741, "id" :"1GyCbAE3c48nczn6gy1SxMP8Yy21A9Eax" },\
+"120": {"ascii": 1670, "id" :"1lzD06bHraI34zOzFn9u4MYbBHl22Pi9q" },\
+"122": {"ascii": 2229, "id" :"1WnddRywbL1021nt0sn7BCmzKxacWENFu" },\
+"123": {"ascii": 2100, "id" :"1piUHgdH0VXWKhDoo538UrcsfENtkqHlk" },\
+"124": {"ascii": 2889, "id" :"1AsAfnXbwr6jL6Gc70_bT8w6Fr2gVE6Hc" },\
+"125": {"ascii": 2980, "id" :"1Xm_HBd6W1MXzs4b6z1AS4IRtBXliZahz" },\
+"126": {"ascii": 2392, "id" :"18SV5dffswn7cTI0l8Uou_SVJrWYN1_gx" },\
+"127": {"ascii": 1828, "id" :"1zQtPu6XUdDlvEmffRLkudjBn4C1uVQZS" },\
+"128": {"ascii": 2783, "id" :"1NwYi0RRTtXq5T3QBowAa2f3qd2YAmAx8" },\
+"129": {"ascii": 1493, "id" :"141FM1-oL__CeE-Fmkf0APO2luHs9reeJ" },\
+"130": {"ascii": 2466, "id" :"1bZcc6ec6AcS4LY78Or5NeZbyJGbTuRAL" },\
+"132": {"ascii": 2256, "id" :"1AJVX-v3qmquD-04SdLCKYZtGl8Awl5xM" },\
+"134": {"ascii": 2327, "id" :"1rO-05-ChFVYy1Ww1-CvmjFVl9xUsVaMk" } }');
+ 
+ function response(){
+  var url = document.URL;
+  var params = url.split('?')[1];
+  params = params.split('&');
+  var key_value = new Object;
+  for(i=0; i<params.length; i++){
+   var k = params[i].split('=');
+   key_value[k[0]] = k[1];
+   }
+  if(! id_mapping[key_value['id']] ){
+   alert('ID do membro não encontrado!!');
+   window.history.forward();
+   window.location.replace('https://nebbiouenf.github.io/omicas/index.html');
+  }  
+  
+  if(parseInt(key_value['code']) == parseInt(id_mapping[key_value['id']].ascii)){ 
+   window.history.forward();
+   window.location.replace("https://drive.google.com/file/d/"+id_mapping[key_value['id']].id+'/view');  
+ }
+ else{
+   alert('ID de e-mail incompatível... ');
+ }
+} 
+ 
+</script>
+</head>
+<body onload="response();">
+ Loading ... 
+</body>
+</html>
