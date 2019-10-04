@@ -149,9 +149,8 @@
    key_value[k[0]] = k[1];
    }
   if(! id_mapping[key_value['id']] ){
-   alert('ID do membro não encontrado!!');
-   window.history.forward();
-   window.location.replace('https://nebbiouenf.github.io/omicas/index.html');
+   alert('ID do membro não encontrado!!');   
+   window.location('https://nebbiouenf.github.io/omicas/index.html');
   }  
   
   if(parseInt(key_value['code']) == parseInt(id_mapping[key_value['id']].ascii)){ 
