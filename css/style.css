@@ -121,14 +121,7 @@ ol {list-style-position: inside;}
   color:grey;
   padding: 2px 2px;
 }
-.event_year{
- display: block;
- width: 100%;
- text-align:center;
- color: white;
- background-color:#1A838F;
- margin-top: 20px;
-}
+
 #google_map{
   width:100%;
   height:100%;
@@ -244,6 +237,77 @@ ol {list-style-position: inside;}
   font-weight:bold;
 }
 
+.event_year{
+ display: block;
+ width: 100%;
+ text-align:center;
+ color: white;
+ background-color:#1A838F;
+ margin-top: 20px;
+}
+.course_list li{  
+ display: block;
+ background-color: #f6eff7; 
+ vertical-align: top; 
+ margin-top: 5px;
+ padding: 10px 5px;
+ box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 6px 0 rgba(0, 0, 0, 0.01); 
+}
+.course_list .title{
+ display: inline-block;
+ font-weight:bold;
+ color:#1A838F; 
+ text-decoration: underline;
+ width: 75%;
+ vertical-align: top; 
+}
+.course_list .enroll{
+ display: inline-block;
+ float: right;
+ width: 19%;
+ vertical-align: top; 
+}
+.course_list .enroll button{
+ background-color: #1A838F; 
+ border: none;
+ color: white;
+ text-align: center;
+ text-decoration: none;
+ padding: 5px 8px;
+ float: right;
+}
+.course_list .teacher{
+ display: block;
+ width: 98%;
+ font-style:italic;
+ font-weight:bold;
+ font-size: 80%;
+}
+.course_list .abstract{ 
+ height: 60px;
+ overflow:hidden;
+}
+.course_list .show_more_label{
+ font-size: 70%; 
+ right: 0;
+}
+.course_list .date{
+ font-size: 80%; 
+}
+.course_list .enroll_form{
+ display: none;
+ position: fixed;
+ z-index: 2;
+ background-color: #cccccc50;
+ top: 10px;
+ bottom: 0;
+ left: 0;
+ right: 0;
+}
+.course_section{
+  display: block;
+  width: 80%;
+}
 
 /* ############# Mobile Styles Smartphones (portrait and landscape) ########################### */
 @media only screen and (min-device-width : 320px) and (max-device-width : 750px){
@@ -343,6 +407,7 @@ ol {list-style-position: inside;}
   .countdown{
    display: none; /* Hidden by default */   
   }
+
 }
 /* #################### Medium devices iPads (portrait and landscape)############ */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){

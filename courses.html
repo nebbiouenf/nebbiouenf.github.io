@@ -3,7 +3,7 @@
 <head>
  <meta charset="utf-8"/>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Courses| NEBBIO</title> 
+ <title>Cursos| NEBBIO</title> 
  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+SC&display=swap" rel="stylesheet" >
  <link rel="stylesheet" href="css/style.css">
  <script src="js/script.js"></script> 
@@ -31,13 +31,9 @@
      <p class='text'>próximo evento</p>
      <img src='img/next_event.png' alt="next event poster"/>     
      </div> -->
-	 <div id="main_col_wide">
-        <h1>Page under construction</h1>
-        <p>Sorry. This page is under construction. Thank you for visiting us. </p> 
-        <p>Desculpa. Esta página está em construção. Obrigado por nos visitar.</p>   
-        <img src='img/under_construction.gif' alt="Un constr" width="100px" height="120px"/>
+	 <div id="main_col_wide">     
 		
-		<h1>Courses </h1>
+		<h1>Cursos</h1>
       		<ol>
       		  <!-- Edit to add a new year --> 
       			<li><a href="#2019">2019</a></li>
@@ -47,9 +43,37 @@
       		
       	 <!-- Edit to add a new year section --> 	
       	<h3 id="2019" class="event_year">2019</h3>
-         <ol type="I">
+         <ol type="I" class="course_list">
            <!-- For each year section add a new event here--> 	
-           <li><a href="course1/index.html" target='_blank'>New course Coming soon...  <img src="img/new.gif" style="height:10px; width:auto;"></a></li>
+           <li id="2019_1">
+             <div class="enroll_form" id="2019_1_form" >
+                <a href="javascript:void(0);" onclick="hide_enroll_form('2019_1_form');">Close</a>
+               <h1>Coming soon</h1>
+             </div>
+             <p class="title">CITOMETRIA DE FLUXO</p>
+             <p class="enroll" onmousedown="show_enroll_form('2019_1_form');";><button>Enroll</button> </p>
+             <p class="date">Data: 12-13 Novembro, 2019</p>
+             <p class="teacher">Juliana Azevedo da Silva</p>
+             <p class="abstract" id="2019_1_abstract">
+             Citometria de fluxo é uma técnica utilizada para contar, examinar e classificar partículas microscópicas suspensas em meio líquido em fluxo. Permite a análise de vários parâmetros simultaneamente, sendo conhecida também por citometria de fluxo multiparamétrica. Através de um aparelho de detecção óptico-eletrônico são possíveis análises de características físicas e/ou químicas de uma simples célula. </p>
+             <a href="javascript:void(0);" onclick="show_more('2019_1_abstract',this);" class="show_more_label"> Show more.</a>
+             
+           </li>           
+           
+           <li id="2019_2"><p class="title">Introcution to programming in R</p>
+             <div class="enroll_form" id="2019_2_form" >
+                <a href="javascript:void(0);" onclick="hide_enroll_form('2019_2_form');">Close</a>
+               <h1>Coming soon</h1>
+             </div>
+             <p class="enroll"> <button onmousedown="show_enroll_form('2019_2_form');" >Enroll</button> </p>
+             <p class="date">Data: 18-20 Novembro, 2019</p>
+             <p class="teacher">Kanhu Charan Moharana</p>
+             <p class="abstract" id="2019_2_abstract">
+             R é um ambiente computacional e uma linguagem de programação que vem progressivamente se especializando em manipulação, análise e visualização gráfica de dados. Na atualidade é considerado o melhor ambiente computacional para essa finalidade. O ambiente está disponível para diferentes sistemas operacionais: Unix/Linux, Mac e Windows. 
+             </p>
+             <a href="javascript:void(0);" onclick="show_more('2019_2_abstract',this);" class="show_more_label"> Show more.</a>
+           </li>
+           
          </ol>
      </div>
   <!-- ################# CHANGE content here [End] ########### -->

@@ -203,3 +203,28 @@ function countdown(){
 		document.getElementById("second").innerHTML = 0;
 	  }
 }
+
+
+// Course event abstract diplay
+function show_more(a,e){
+ var abstract = document.getElementById(a);
+ if(abstract.style.height == '100%'){
+  abstract.style.height = '60px';
+  e.innerHTML = 'Show more';
+ }
+ else{
+  abstract.style.height = '100%';
+  e.innerHTML = 'Show less';
+ } 
+}
+function show_enroll_form(form_id){
+ document.getElementById(form_id).style.display='block';
+ document.getElementById(form_id).style.width='98%';
+ document.getElementById(form_id).style.margin='0 auto';
+}
+function hide_enroll_form(form_id){
+ document.getElementById(form_id).style.display='none';
+}
+
+
+
