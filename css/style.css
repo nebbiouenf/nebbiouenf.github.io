@@ -264,11 +264,12 @@ ol {list-style-position: inside;}
 .course_list .enroll{
  display: inline-block;
  float: right;
- width: 19%;
- vertical-align: top; 
+ width: 20%;
+ vertical-align: top;
+ padding: 10px 10px;
 }
 .course_list .enroll button{
- background-color: #1A838F; 
+ background-color: #2b8cbe; 
  border: none;
  color: white;
  text-align: center;
@@ -276,6 +277,11 @@ ol {list-style-position: inside;}
  padding: 10px 8px;
  float: right;
  cursor: pointer;
+ font-size: 110%;
+ border-radius: 5px;
+}
+.course_list .enroll button:hover{
+ background-color: #1A838Fc5; 
 }
 .course_list .teacher{
  display: block;
