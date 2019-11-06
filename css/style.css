@@ -273,8 +273,9 @@ ol {list-style-position: inside;}
  color: white;
  text-align: center;
  text-decoration: none;
- padding: 5px 8px;
+ padding: 10px 8px;
  float: right;
+ cursor: pointer;
 }
 .course_list .teacher{
  display: block;
@@ -284,6 +285,7 @@ ol {list-style-position: inside;}
  font-size: 80%;
 }
 .course_list .abstract{ 
+ background-color: #fff;	
  height: 60px;
  overflow:hidden;
 }
@@ -309,7 +311,7 @@ ol {list-style-position: inside;}
   width: 80%;
 }
 button{
-	cursor: pointer;
+	
 }
 /* ############# Mobile Styles Smartphones (portrait and landscape) ########################### */
 @media only screen and (min-device-width : 320px) and (max-device-width : 750px){
