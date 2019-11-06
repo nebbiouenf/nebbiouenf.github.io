@@ -210,11 +210,11 @@ function show_more(a,e){
  var abstract = document.getElementById(a);
  if(abstract.style.height == '100%'){
   abstract.style.height = '60px';
-  e.innerHTML = 'Show more';
+  e.innerHTML = 'Mostre mais.';
  }
  else{
   abstract.style.height = '100%';
-  e.innerHTML = 'Show less';
+  e.innerHTML = 'Mostre Menos.';
  } 
 }
 function show_enroll_form(form_id){
