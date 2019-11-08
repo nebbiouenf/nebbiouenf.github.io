@@ -53,7 +53,8 @@ function populate_nav_sidebar(){
 	h['Eventos'] = 'events.html';
 	h['Cursos'] = 'courses.html';
 	h['Sobre nós'] = 'about_us.html';
-	h['Contate-nos'] = 'contact.html';	
+	h['Contate-nos'] = 'contact.html';
+	h['Baixar Certificado'] = 'https://sites.google.com/view/nebbiocertificado/';		
 	var nav = document.getElementById("nav_ul");
 	for(var page_name in h){
 		var li = document.createElement("li");
