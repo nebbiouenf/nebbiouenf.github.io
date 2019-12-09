@@ -294,6 +294,7 @@ ol {list-style-position: inside;}
  background-color: #fff;	
  height: 60px;
  overflow:hidden;
+ padding: 5px 5px;
 }
 .course_list .show_more_label{
  font-size: 70%; 
